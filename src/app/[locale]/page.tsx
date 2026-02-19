@@ -11,12 +11,13 @@ import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
 import { Metadata } from "next";
 
-import { cookies } from "next/headers";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const cookieStore = await cookies();
-  const lang = cookieStore.get("lang")?.value || "bn";
-  const isEn = lang === "en";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isEn = locale === "en";
 
   return {
     title: isEn ? "Home" : "হোম",

@@ -18,28 +18,28 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { useLanguage } from "@/context/LanguageContext";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
 export function ProblemForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { language, t } = useLanguage();
+  const t = useTranslations("ProblemForm");
 
   const formSchema = z.object({
     name: z.string().min(2, {
-      message: t.problemForm.validation.name,
+      message: t("validation.name"),
     }),
     area: z.string().min(2, {
-      message: t.problemForm.validation.area,
+      message: t("validation.area"),
     }),
     problemType: z.string().min(1, {
-      message: t.problemForm.validation.type,
+      message: t("validation.type"),
     }),
     description: z.string().min(10, {
-      message: t.problemForm.validation.description,
+      message: t("validation.description"),
     }),
     phone: z.string().optional(),
   });
@@ -64,16 +64,13 @@ export function ProblemForm() {
     return (
       <div className="w-full container mx-auto px-4 sm:px-6 bg-primary py-8 sm:py-12 text-white mt-24 md:mt-32">
         <h3 className="bengali text-2xl sm:text-3xl font-bold mb-4">
-          {t.problemForm.successTitle}
+          {t("successMessage")}
         </h3>
-        <p className="bengali text-lg sm:text-xl leading-relaxed">
-          {t.problemForm.successMessage}
-        </p>
         <Button
           onClick={() => setIsSubmitted(false)}
           className="mt-8 bg-white border-white text-primary hover:bg-white/90 hover:text-primary cursor-pointer"
         >
-          {t.problemForm.reportAnother}
+          {t("reportAnother")}
         </Button>
       </div>
     );
@@ -88,16 +85,16 @@ export function ProblemForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
           <div>
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-              — {t.problemForm.label}
+              — {t("label")}
             </span>
             <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl mb-8">
-              {t.problemForm.title}
+              {t("title")}
             </h2>
             <p className="bengali text-xl text-neutral-600 leading-relaxed mb-8">
-              {t.problemForm.description}
+              {t("description")}
             </p>
             <div className="p-8 bg-white border border-primary italic text-sm text-neutral-500">
-              {t.problemForm.disclaimer}
+              {t("disclaimer")}
             </div>
           </div>
 
@@ -114,11 +111,11 @@ export function ProblemForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="bengali font-bold text-sm sm:text-base">
-                          {t.problemForm.fields.name}
+                          {t("fields.name")}
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder={t.problemForm.fields.namePlaceholder}
+                            placeholder={t("fields.namePlaceholder")}
                             className="border-primary h-12"
                             {...field}
                           />
@@ -133,11 +130,11 @@ export function ProblemForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="bengali font-bold text-sm sm:text-base">
-                          {t.problemForm.fields.area}
+                          {t("fields.area")}
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder={t.problemForm.fields.areaPlaceholder}
+                            placeholder={t("fields.areaPlaceholder")}
                             className="border-primary h-12"
                             {...field}
                           />
@@ -154,7 +151,7 @@ export function ProblemForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="bengali font-bold text-sm sm:text-base">
-                        {t.problemForm.fields.problemType}
+                        {t("fields.type")}
                       </FormLabel>
                       <Select
                         onValueChange={field.onChange}
@@ -163,24 +160,22 @@ export function ProblemForm() {
                         <FormControl>
                           <SelectTrigger className="border-primary h-12">
                             <SelectValue
-                              placeholder={
-                                t.problemForm.fields.problemTypePlaceholder
-                              }
+                              placeholder={t("fields.problemTypePlaceholder")}
                             />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="border-primary rounded-none">
                           <SelectItem value="extortion">
-                            {t.problemForm.fields.problemTypes.extortion}
+                            {t("fields.problemTypes.extortion")}
                           </SelectItem>
-                          <SelectItem value="land-grabbing">
-                            {t.problemForm.fields.problemTypes.landGrabbing}
+                          <SelectItem value="landGrabbing">
+                            {t("fields.problemTypes.landGrabbing")}
                           </SelectItem>
                           <SelectItem value="injustice">
-                            {t.problemForm.fields.problemTypes.injustice}
+                            {t("fields.problemTypes.injustice")}
                           </SelectItem>
                           <SelectItem value="other">
-                            {t.problemForm.fields.problemTypes.other}
+                            {t("fields.problemTypes.other")}
                           </SelectItem>
                         </SelectContent>
                       </Select>
@@ -195,13 +190,13 @@ export function ProblemForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="bengali font-bold text-sm sm:text-base">
-                        {t.problemForm.fields.problemDescription}
+                        {t("fields.description")}
                       </FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder={
-                            t.problemForm.fields.problemDescriptionPlaceholder
-                          }
+                          placeholder={t(
+                            "fields.problemDescriptionPlaceholder",
+                          )}
                           className="border-primary min-h-[150px]"
                           {...field}
                         />
@@ -217,7 +212,7 @@ export function ProblemForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="bengali font-bold text-sm sm:text-base">
-                        {t.problemForm.fields.phone}
+                        {t("fields.phone")}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -227,7 +222,7 @@ export function ProblemForm() {
                         />
                       </FormControl>
                       <FormDescription className="bengali text-[10px] text-neutral-400">
-                        {t.problemForm.fields.phoneHint}
+                        {t("fields.phoneHint")}
                       </FormDescription>
                       <FormMessage className="bengali text-xs" />
                     </FormItem>
@@ -238,7 +233,7 @@ export function ProblemForm() {
                   type="submit"
                   className="bengali w-full bg-primary h-14 text-lg font-bold text-white transition-none hover:bg-primary cursor-pointer"
                 >
-                  {t.problemForm.submit}
+                  {t("submit")}
                 </Button>
               </form>
             </Form>

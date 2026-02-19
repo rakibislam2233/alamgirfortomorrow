@@ -1,8 +1,8 @@
 "use client";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 
 export function QuoteSection() {
-  const { t } = useLanguage();
+  const t = useTranslations("Hero");
 
   return (
     <section className="bg-primary py-24 text-white text-center">
@@ -10,7 +10,7 @@ export function QuoteSection() {
         <div className="max-w-4xl mx-auto">
           <span className="text-6xl font-serif opacity-30 block mb-8">“</span>
           <h2 className="bengali text-3xl md:text-5xl font-black leading-tight tracking-tight mb-8 italic">
-            {t.hero.quote}
+            {t("quote")}
           </h2>
           <span className="text-6xl font-serif opacity-30 block mt-8">”</span>
         </div>

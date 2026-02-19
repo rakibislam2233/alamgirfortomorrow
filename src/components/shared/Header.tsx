@@ -1,30 +1,28 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/context/LanguageContext";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { Globe } from "lucide-react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const navLinks =
-    language === "bn"
-      ? [
-          { name: "হোম", href: "/" },
-          { name: "আমার সম্পর্কে", href: "/about" },
-          { name: "৭টি অঙ্গীকার", href: "/commitments" },
-          { name: "স্বেচ্ছাসেবক", href: "/volunteer" },
-          { name: "যোগাযোগ", href: "/contact" },
-        ]
-      : [
-          { name: "Home", href: "/" },
-          { name: "About Me", href: "/about" },
-          { name: "7 Pledges", href: "/commitments" },
-          { name: "Volunteer", href: "/volunteer" },
-          { name: "Contact", href: "/contact" },
-        ];
+  const navLinks = [
+    { name: t("Nav.home"), href: "/" },
+    { name: t("Nav.about"), href: "/about" },
+    { name: t("Nav.commitments"), href: "/commitments" },
+    { name: t("Nav.volunteer"), href: "/volunteer" },
+    { name: t("Nav.contact"), href: "/contact" },
+  ];
+
+  const handleLanguageChange = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+  };
 
   return (
     <>
@@ -33,10 +31,10 @@ export function Header() {
           <div className="flex items-center gap-4">
             <Link href="/" className="flex flex-col">
               <span className="text-xl font-black tracking-tighter text-primary sm:text-2xl">
-                {t.displayTitle}
+                {t("displayTitle")}
               </span>
               <span className="bengali text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-500 sm:text-[10px] sm:tracking-[0.3em]">
-                {t.name}
+                {t("name")}
               </span>
             </Link>
           </div>
@@ -44,8 +42,8 @@ export function Header() {
           <nav className="hidden items-center gap-6 md:flex lg:gap-8">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
+                key={link.href as string}
+                href={link.href as any}
                 className="bengali text-[14px] font-medium text-neutral-600 transition-none hover:text-primary lg:text-[15px]"
               >
                 {link.name}
@@ -54,14 +52,14 @@ export function Header() {
 
             <div className="flex items-center gap-2 border border-primary px-2 py-1">
               <button
-                onClick={() => setLanguage("bn")}
-                className={`text-xs font-bold px-2 py-1 cursor-pointer ${language === "bn" ? "bg-primary text-white" : "text-primary"}`}
+                onClick={() => handleLanguageChange("bn")}
+                className={`text-xs font-bold px-2 py-1 cursor-pointer ${locale === "bn" ? "bg-primary text-white" : "text-primary"}`}
               >
                 BN
               </button>
               <button
-                onClick={() => setLanguage("en")}
-                className={`text-xs font-bold px-2 py-1 cursor-pointer ${language === "en" ? "bg-primary text-white" : "text-primary"}`}
+                onClick={() => handleLanguageChange("en")}
+                className={`text-xs font-bold px-2 py-1 cursor-pointer ${locale === "en" ? "bg-primary text-white" : "text-primary"}`}
               >
                 EN
               </button>
@@ -71,17 +69,21 @@ export function Header() {
               asChild
               className="bengali bg-primary text-white hover:bg-primary"
             >
-              <Link href="/contact">{t.hero.cta}</Link>
+              <Link href="/contact" locale={locale as any}>
+                {t("Hero.cta")}
+              </Link>
             </Button>
           </nav>
 
           <div className="flex items-center gap-4 md:hidden">
             <button
-              onClick={() => setLanguage(language === "bn" ? "en" : "bn")}
+              onClick={() =>
+                handleLanguageChange(locale === "bn" ? "en" : "bn")
+              }
               className="flex items-center gap-1 border border-primary px-2 py-1 text-[10px] font-bold text-primary"
             >
               <Globe size={14} />
-              {language === "bn" ? "EN" : "বাংলা"}
+              {locale === "bn" ? "EN" : "বাংলা"}
             </button>
             <Button
               variant="outline"
@@ -109,7 +111,7 @@ export function Header() {
         <div className="fixed inset-0 z-60 flex flex-col bg-white p-6 md:hidden">
           <div className="flex items-center justify-between mb-12">
             <span className="text-xl font-black tracking-tighter text-primary">
-              {t.displayTitle}
+              {t("displayTitle")}
             </span>
             <Button
               variant="outline"
@@ -132,8 +134,8 @@ export function Header() {
           <nav className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
+                key={link.href as string}
+                href={link.href as any}
                 onClick={() => setIsOpen(false)}
                 className="bengali text-3xl font-black tracking-tight text-primary border-b border-neutral-100 pb-4"
               >
@@ -145,7 +147,9 @@ export function Header() {
               className="bengali h-16 bg-primary text-xl font-bold text-white mt-4"
               onClick={() => setIsOpen(false)}
             >
-              <Link href="/contact">{t.hero.cta}</Link>
+              <Link href="/contact" locale={locale as any}>
+                {t("Hero.cta")}
+              </Link>
             </Button>
           </nav>
         </div>

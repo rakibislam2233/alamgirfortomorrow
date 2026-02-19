@@ -1,12 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/context/LanguageContext";
+import { Link } from "@/i18n/routing";
 import { MessageSquareText } from "lucide-react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 export function FloatingProblemButton() {
-  const { language } = useLanguage();
+  const t = useTranslations("Hero");
+  const locale = useLocale();
 
   return (
     <div className="fixed bottom-6 right-6 z-40 lg:bottom-12 lg:right-12">
@@ -16,7 +17,7 @@ export function FloatingProblemButton() {
       >
         <Link href="/contact" className="flex items-center gap-2 sm:gap-3">
           <MessageSquareText size={20} className="sm:w-6 sm:h-6" />
-          <span>{language === "bn" ? "সমস্যা জানান" : "Report Issue"}</span>
+          <span>{locale === "bn" ? "সমস্যা জানান" : "Report Issue"}</span>
         </Link>
       </Button>
     </div>

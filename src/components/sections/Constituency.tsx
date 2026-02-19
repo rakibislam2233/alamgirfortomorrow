@@ -1,8 +1,8 @@
 "use client";
-import { useLanguage } from "@/context/LanguageContext";
+import { useTranslations } from "next-intl";
 
 export function Constituency() {
-  const { t } = useLanguage();
+  const t = useTranslations("Constituency");
 
   return (
     <section className="bg-white py-24 md:py-32 border-b border-primary">
@@ -10,28 +10,28 @@ export function Constituency() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px border border-primary bg-primary">
           <div className="lg:col-span-1 bg-white p-12 flex flex-col justify-center">
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-              — {t.constituencyData.label}
+              — {t("label")}
             </span>
             <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl mb-8 leading-tight">
-              {t.constituencyData.title}
+              {t("title")}
             </h2>
             <div className="space-y-6 bengali text-lg text-neutral-600">
               <div className="flex justify-between border-b border-neutral-100 pb-4">
-                <span>{t.constituencyData.unions}</span>
+                <span>{t("unions")}</span>
                 <span className="font-bold text-black text-2xl">
-                  {t.constituencyData.unionsCount}
+                  {t("unionsCount")}
                 </span>
               </div>
               <div className="flex justify-between border-b border-neutral-100 pb-4">
-                <span>{t.constituencyData.municipality}</span>
+                <span>{t("municipality")}</span>
                 <span className="font-bold text-black text-2xl">
-                  {t.constituencyData.municipalityCount}
+                  {t("municipalityCount")}
                 </span>
               </div>
               <div className="flex justify-between border-b border-neutral-100 pb-4">
-                <span>{t.constituencyData.voters}</span>
+                <span>{t("voters")}</span>
                 <span className="font-bold text-black text-2xl tracking-tighter">
-                  {t.constituencyData.votersCount}
+                  {t("votersCount")}
                 </span>
               </div>
             </div>

@@ -1,10 +1,14 @@
 "use client";
-import { useLanguage } from "@/context/LanguageContext";
-import { SITE_DATA } from "@/lib/constants";
 import { Facebook, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Contact() {
-  const { t } = useLanguage();
+  const t = useTranslations("Contact");
+
+  const social = {
+    facebook: "https://www.facebook.com/MirzaAlamgir/",
+    twitter: "https://x.com/BNPSGOffice",
+  };
 
   return (
     <section id="contact" className="bg-white py-24 md:py-32">
@@ -12,13 +16,13 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-              — {t.contactSection.label}
+              — {t("label")}
             </span>
             <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-6xl mb-8">
-              {t.contactSection.title}
+              {t("title")}
             </h2>
             <p className="bengali text-xl text-neutral-600 leading-relaxed max-w-lg">
-              {t.contactSection.subtitle}
+              {t("subtitle")}
             </p>
           </div>
 
@@ -30,10 +34,10 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {t.contactSection.officeLabel}
+                    {t("office")}
                   </h4>
                   <p className="bengali text-neutral-600 italic leading-relaxed">
-                    {t.contact.address}
+                    {t("address")}
                   </p>
                 </div>
               </div>
@@ -43,10 +47,10 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {t.contactSection.phoneLabel}
+                    {t("phoneLabel")}
                   </h4>
                   <p className="bengali text-neutral-600 italic">
-                    {t.contact.phone}
+                    {t("phone")}
                   </p>
                 </div>
               </div>
@@ -56,10 +60,10 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {t.contactSection.emailLabel}
+                    {t("emailLabel")}
                   </h4>
                   <p className="bengali text-neutral-600 italic">
-                    {t.contact.email}
+                    {t("email")}
                   </p>
                 </div>
               </div>
@@ -69,11 +73,11 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {t.contactSection.socialLabel}
+                    {t("social")}
                   </h4>
                   <div className="flex gap-4">
                     <a
-                      href={SITE_DATA.social.facebook}
+                      href={social.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -83,7 +87,7 @@ export function Contact() {
                       />
                     </a>
                     <a
-                      href={SITE_DATA.social.twitter}
+                      href={social.twitter}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

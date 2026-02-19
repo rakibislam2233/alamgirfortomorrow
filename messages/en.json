@@ -1,0 +1,236 @@
+{
+  "name": "Mirza Fakhrul Islam Alamgir",
+  "displayTitle": "Alamgirfortomorrow",
+  "title": "Member of Parliament, Thakurgaon-1",
+  "party": "Secretary General, Bangladesh Nationalist Party (BNP)",
+  "constituency": "Thakurgaon-1",
+  "slogan": "Towards a New Day — Thakurgaon",
+  "Nav": {
+    "home": "Home",
+    "about": "About Me",
+    "commitments": "7 Pledges",
+    "volunteer": "Volunteer",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "tagline": "Journey Towards Freedom: A New Era in Thakurgaon",
+    "subline": "Safeguarding your home, your neighborhood, and your district is our responsibility. People are the power.",
+    "cta": "Report a Problem",
+    "quote": "We want a state that has the capacity to realize the dreams of its citizens. Safeguarding your home is our duty."
+  },
+  "About": {
+    "title": "Mirza Fakhrul Islam Alamgir: A Life of Politics and Public Service",
+    "subtitle": "A journey of continuous struggle and service from the 1969 student movement to national leadership",
+    "content": "From the 1969 student movement to serving as Chairman of Thakurgaon Municipality, Member of Parliament, State Minister, and since 2016, Secretary General of BNP—his long journey is a unique blend of intellectual firmness, grassroots movement, and national leadership.",
+    "history": "He served successfully as the Mayor of Thakurgaon from 1988 to 1990. He was an Economics lecturer at Thakurgaon Govt College and founder chairman of ESDO.",
+    "birth": "January 26, 1948, Thakurgaon",
+    "education": "Dhaka College (HSC), University of Dhaka (BSS & MSS in Economics)",
+    "professional": "Lecturer in Economics, Inspector at D&I, Private Secretary to Deputy PM under President Ziaur Rahman.",
+    "milestones": [
+      {
+        "year": "1969",
+        "event": "Student Movement - President of East Pakistan Student Union, DU branch"
+      },
+      {
+        "year": "1988",
+        "event": "Elected Chairman of Thakurgaon Municipality"
+      },
+      {
+        "year": "1992",
+        "event": "Joined BNP and became President of Thakurgaon District BNP"
+      },
+      {
+        "year": "2001",
+        "event": "Elected MP from Thakurgaon-1 and appointed State Minister"
+      },
+      {
+        "year": "2016-Present",
+        "event": "Secretary General, Bangladesh Nationalist Party (BNP)"
+      }
+    ]
+  },
+  "Commitments": {
+    "label": "Our Commitments",
+    "title": "My 7 Pledges",
+    "power": "People are the Power",
+    "unbeatable": "Thakurgaon will be Unbeatable",
+    "items": [
+      {
+        "title": "Healthcare, Now",
+        "description": "Strengthening Sadar Hospital with manpower and modern equipment; committed to establishing Medical College."
+      },
+      {
+        "title": "Transport Revolution",
+        "description": "Initiatives to reopen the airport, repair broken roads/drainage, and secure level crossings."
+      },
+      {
+        "title": "Jobs & Business",
+        "description": "Easy loans for SME, bringing new industries, suppressing extortion—youth will find work locally."
+      },
+      {
+        "title": "Strong Education",
+        "description": "Establishing universities and technical training centers; special support for girls' education."
+      },
+      {
+        "title": "Fairness for Farmers",
+        "description": "Fair prices for crops, modern irrigation, and saving the Tangon river from pollution."
+      },
+      {
+        "title": "Good Governance",
+        "description": "Fast and transparent land registration and govt services; expanding internet connectivity."
+      },
+      {
+        "title": "Safe Society",
+        "description": "Strict measures against drugs and crime; positive path for youth through sports & culture."
+      }
+    ]
+  },
+  "achievements": [
+    {
+      "title": "Reconstruction of Thakurgaon Central Mosque",
+      "description": "Inauguration of a 6-story modern mosque project worth 34 crore BDT in April 2025.",
+      "year": "2025"
+    },
+    {
+      "title": "Barendra Underground Irrigation",
+      "description": "Transformation of 1,337 tubewells into underground pipeline networks, saving land and water.",
+      "year": "2005"
+    },
+    {
+      "title": "Technical Training Center",
+      "description": "Established TTC and Polytechnic in Gobindanagar for technical education expansion.",
+      "year": "2001-2006"
+    },
+    {
+      "title": "Digital Access & Wi-Fi",
+      "description": "Launched free Wi-Fi zones in Thakurgaon city, now a nationwide model.",
+      "year": "2025"
+    },
+    {
+      "title": "Sports & Zia Memorial",
+      "description": "Launched Zia Memorial Football Tournament to re-engage youth in sports.",
+      "year": "2024"
+    },
+    {
+      "title": "Education & Infrastructure (ESDO)",
+      "description": "MPOs for private schools/colleges, road and bridge construction through ESDO.",
+      "year": "1991-2006"
+    }
+  ],
+  "contributions": {
+    "national": [
+      {
+        "title": "Agri Mechanization",
+        "description": "Policy initiatives for agricultural mechanization and irrigation expansion."
+      },
+      {
+        "title": "Export-oriented Agri",
+        "description": "Encouraged export-oriented agricultural industries and rural development."
+      },
+      {
+        "title": "Airport Infrastructure",
+        "description": "Infrastructure development and regional connectivity during tenure as State Minister."
+      },
+      {
+        "title": "Eco-Tourism",
+        "description": "Promoted tourism development and eco-tourism in Northern region."
+      }
+    ],
+    "local": [
+      {
+        "title": "Roads & Bridges",
+        "description": "Construction of rural roads and bridges to connect remote villages."
+      },
+      {
+        "title": "Electricity",
+        "description": "Expanded coverage of rural electrification."
+      },
+      {
+        "title": "Governance",
+        "description": "Established Anti-Corruption Commission at national level, benefiting local administration."
+      }
+    ]
+  },
+  "NotFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you are looking for could not be found or has been removed.",
+    "homeButton": "Back to Home"
+  },
+  "ContactPage": {
+    "label": "Direct Contact",
+    "title": "We're Here for You"
+  },
+  "VolunteerPage": {
+    "label": "Team Mirza Fakhrul",
+    "title": "Join as a Volunteer",
+    "description": "A strong and modern Thakurgaon will be built with the participation of ordinary people. Fill out the form below to volunteer for our campaign.",
+    "thankYou": "Thank You!",
+    "successMessage": "Your information has been successfully submitted. Our team will contact you soon.",
+    "addAnother": "Add another member",
+    "form": {
+      "name": "Your Full Name",
+      "namePlaceholder": "Enter name",
+      "phone": "Phone Number",
+      "email": "Email (Optional)",
+      "address": "Permanent Address",
+      "addressPlaceholder": "Detailed address",
+      "profession": "Profession",
+      "professionPlaceholder": "e.g., Student, Teacher, Entrepreneur",
+      "reason": "Why do you want to work with us?",
+      "reasonPlaceholder": "Write your thoughts...",
+      "submit": "Join the Team →"
+    }
+  },
+  "CommitmentsPage": {
+    "manifesto": "Our Manifesto",
+    "subtitle": "Our specific plans to build a healthy, strong, and modern Thakurgaon.",
+    "bannerTitle": "People are the Power, Thakurgaon will be Unbeatable",
+    "bannerSubtitle": "Join us and pave the way for a new day."
+  },
+  "Contact": {
+    "address": "Thakurgaon Office, BNP Office Road, Thakurgaon.",
+    "phone": "+880 1700-000000",
+    "email": "info@alamgirfortomorrow.com",
+    "label": "Contact Us",
+    "title": "Office Address & Contact Methods",
+    "subtitle": "For any queries, please reach out via our official channels or visit our office directly.",
+    "office": "Office",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "social": "Social Media"
+  },
+  "ProblemForm": {
+    "label": "Direct Complaint",
+    "title": "Report Your Complaints or Problems",
+    "description": "Report issues in your area such as extortion, occupation, or any other irregularities directly to us. Your identity will be kept confidential.",
+    "disclaimer": "Privacy Disclaimer: Your personal information will only be used for the purpose of resolving the issue and will not be disclosed to third parties.",
+    "submit": "Submit",
+    "successMessage": "Your problem has been submitted successfully. We will contact you soon.",
+    "reportAnother": "Report another problem",
+    "fields": {
+      "name": "Your Name",
+      "area": "Area/Village",
+      "type": "Problem Type",
+      "description": "Description of the Problem",
+      "phone": "Phone Number (Optional)",
+      "phoneHint": "To contact in case of emergency."
+    }
+  },
+  "Constituency": {
+    "label": "Constituency",
+    "title": "Thakurgaon-1 Constituency",
+    "unions": "Total Unions",
+    "unionsCount": "21",
+    "municipality": "Municipality",
+    "municipalityCount": "1",
+    "voters": "Total Voters",
+    "votersCount": "5,50,000+"
+  },
+  "Footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "rights": "All Rights Reserved.",
+    "developedBy": "Developed by",
+    "thankYou": "Thank you, residents of Thakurgaon."
+  }
+}

@@ -1,28 +1,24 @@
 "use client";
-import { useLanguage } from "@/context/LanguageContext";
-import { SITE_DATA } from "@/lib/constants";
+import { Link } from "@/i18n/routing";
 import { Facebook, Twitter } from "lucide-react";
-import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Footer() {
-  const { language, t } = useLanguage();
+  const t = useTranslations();
+  const locale = useLocale();
 
-  const navLinksEn = [
-    { name: "Home", href: "/" },
-    { name: "About Me", href: "/about" },
-    { name: "7 Pledges", href: "/commitments" },
-    { name: "Volunteer", href: "/volunteer" },
-    { name: "Contact", href: "/contact" },
-  ];
-  const navLinksBn = [
-    { name: "হোম", href: "/" },
-    { name: "আমার সম্পর্কে", href: "/about" },
-    { name: "৭টি অঙ্গীকার", href: "/commitments" },
-    { name: "স্বেচ্ছাসেবক", href: "/volunteer" },
-    { name: "যোগাযোগ", href: "/contact" },
+  const links = [
+    { name: t("Nav.home"), href: "/" },
+    { name: t("Nav.about"), href: "/about" },
+    { name: t("Nav.commitments"), href: "/commitments" },
+    { name: t("Nav.volunteer"), href: "/volunteer" },
+    { name: t("Nav.contact"), href: "/contact" },
   ];
 
-  const links = language === "bn" ? navLinksBn : navLinksEn;
+  const social = {
+    facebook: "https://www.facebook.com/MirzaAlamgir/",
+    twitter: "https://x.com/BNPSGOffice",
+  };
 
   return (
     <footer className="border-t border-primary bg-white py-12 md:py-20">
@@ -31,32 +27,30 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex flex-col mb-6">
               <span className="text-3xl font-black tracking-tighter text-primary">
-                {t.displayTitle}
+                {t("displayTitle")}
               </span>
               <span className="bengali text-xs font-bold uppercase tracking-[0.3em] text-neutral-500">
-                {t.name}
+                {t("name")}
               </span>
             </Link>
 
             <p className="bengali max-w-md text-neutral-600 leading-relaxed mb-6">
-              {t.hero.tagline}
+              {t("Hero.tagline")}
             </p>
             <div className="bengali text-primary font-black text-2xl mb-8 italic">
-              {language === "bn"
-                ? "ধন্যবাদ, ঠাকুরগাঁওবাসী।"
-                : "Thank you, residents of Thakurgaon."}
+              {t("Footer.thankYou")}
             </div>
           </div>
 
           <div>
             <h4 className="bengali text-lg font-bold mb-6 italic">
-              {language === "bn" ? "লিংকসমূহ" : "Quick Links"}
+              {t("Footer.quickLinks")}
             </h4>
             <ul className="space-y-4">
               {links.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href={link.href as any}
                     className="bengali text-neutral-600 hover:text-primary transition-none"
                   >
                     {link.name}
@@ -68,12 +62,12 @@ export function Footer() {
 
           <div>
             <h4 className="bengali text-lg font-bold mb-6 italic">
-              {language === "bn" ? "যোগাযোগ" : "Contact"}
+              {t("Footer.contact")}
             </h4>
             <div className="space-y-4 bengali text-neutral-600">
-              <p>{t.contact.address}</p>
-              <p>{t.contact.phone}</p>
-              <p>{t.contact.email}</p>
+              <p>{t("Contact.address")}</p>
+              <p>{t("Contact.phone")}</p>
+              <p>{t("Contact.email")}</p>
             </div>
           </div>
         </div>
@@ -81,13 +75,10 @@ export function Footer() {
         <div className="mt-20 border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-col items-center md:items-end gap-2 text-sm text-neutral-400">
             <p className="bengali text-sm text-neutral-500">
-              © {new Date().getFullYear()} {t.name}।{" "}
-              {language === "bn"
-                ? "সর্বস্বত্ব সংরক্ষিত।"
-                : "All Rights Reserved."}
+              © {new Date().getFullYear()} {t("name")}। {t("Footer.rights")}
             </p>
             <p className="text-xs">
-              Developed by{" "}
+              {t("Footer.developedBy")}{" "}
               <a
                 href="https://www.facebook.com/rakibulislamrakib.tkg"
                 target="_blank"
@@ -100,7 +91,7 @@ export function Footer() {
           </div>
           <div className="flex gap-6">
             <a
-              href={SITE_DATA.social.facebook}
+              href={social.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-400 hover:text-primary transition-none"
@@ -108,7 +99,7 @@ export function Footer() {
               <Facebook size={20} />
             </a>
             <a
-              href={SITE_DATA.social.twitter}
+              href={social.twitter}
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-400 hover:text-primary transition-none"
