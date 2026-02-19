@@ -1,31 +1,45 @@
-import { SITE_DATA } from "@/lib/constants";
+"use client";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Achievements() {
+  const { language, t } = useLanguage();
+
   return (
     <section
       id="achievements"
-      className="bg-white py-24 md:py-32 border-b border-black"
+      className="bg-white py-24 md:py-32 border-b border-primary"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="mb-20">
           <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-            — ঠাকুরগাঁও ও জাতীয় পর্যায়ে
+            —{" "}
+            {language === "bn"
+              ? "ঠাকুরগাঁও ও জাতীয় পর্যায়ে"
+              : "At Local & National Levels"}
           </span>
           <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-6xl">
-            কাজ ও অবদান
+            {language === "bn" ? "কাজ ও অবদান" : "Work & Contributions"}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Recent Initiatives Card */}
-          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
-              গত ১৫ মাসে সাম্প্রতিক উদ্যোগ
+          <div className="p-6 sm:p-12 border border-primary bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-primary pb-4 text-primary italic">
+              {language === "bn"
+                ? "গত ১৫ মাসে সাম্প্রতিক উদ্যোগ"
+                : "Recent Initiatives (Last 15 Months)"}
             </h3>
             <div className="space-y-8">
-              {SITE_DATA.achievements
-                .filter((a) => a.year === "২০২৪" || a.year === "২০২৫")
-                .map((item, idx) => (
+              {t.achievements
+                .filter(
+                  (a: any) =>
+                    a.year === "২০২৪" ||
+                    a.year === "২০২৫" ||
+                    a.year === "2024" ||
+                    a.year === "2025",
+                )
+                .map((item: any, idx: number) => (
                   <div key={idx} className="group">
                     <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
@@ -40,19 +54,23 @@ export function Achievements() {
           </div>
 
           {/* BNP Era Projects Card */}
-          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
-              বিএনপি শাসনামলে বড় প্রকল্প (২০০১–২০০৬)
+          <div className="p-6 sm:p-12 border border-primary bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-primary pb-4 text-primary italic">
+              {language === "bn"
+                ? "বিএনপি শাসনামলে বড় প্রকল্প (২০০১–২০০৬)"
+                : "Major Projects in BNP Era (2001–2006)"}
             </h3>
             <div className="space-y-8">
-              {SITE_DATA.achievements
+              {t.achievements
                 .filter(
-                  (a) =>
+                  (a: any) =>
                     a.year === "২০০৫" ||
+                    a.year === "2005" ||
                     a.year === "২০০১-২০০৬" ||
+                    a.year === "2001-2006" ||
                     a.title.includes("ESDO"),
                 )
-                .map((item, idx) => (
+                .map((item: any, idx: number) => (
                   <div key={idx} className="group">
                     <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
@@ -67,12 +85,14 @@ export function Achievements() {
           </div>
 
           {/* National Contributions Card */}
-          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
-              জাতীয় অবদান (২০০১–২০০৬)
+          <div className="p-6 sm:p-12 border border-primary bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-primary pb-4 text-primary italic">
+              {language === "bn"
+                ? "জাতীয় অবদান (২০০১–২০০৬)"
+                : "National Contributions (2001–2006)"}
             </h3>
             <div className="space-y-8">
-              {SITE_DATA.contributions.national.map((item, idx) => (
+              {t.contributions.national.map((item: any, idx: number) => (
                 <div key={idx} className="group">
                   <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                     <span className="text-primary">→</span>
@@ -87,12 +107,14 @@ export function Achievements() {
           </div>
 
           {/* Local Work List Card */}
-          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
-              ঠাকুরগাঁওয়ে বিএনপির কাজ (১৯৯১–২০০৬)
+          <div className="p-6 sm:p-12 border border-primary bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-primary pb-4 text-primary italic">
+              {language === "bn"
+                ? "ঠাকুরগাঁওয়ে বিএনপির কাজ (১৯৯১–২০০৬)"
+                : "BNP Initiatives in Thakurgaon (1991–2006)"}
             </h3>
             <div className="space-y-6">
-              {SITE_DATA.contributions.local.map((item, idx) => (
+              {t.contributions.local.map((item: any, idx: number) => (
                 <div
                   key={idx}
                   className="flex font-bold items-start gap-4 text-sm sm:text-base"
@@ -107,9 +129,9 @@ export function Achievements() {
                 </div>
               ))}
               <p className="bengali text-neutral-600 pt-4 italic font-medium text-sm sm:text-base">
-                ঠাকুরগাঁওয়ের সব বেসরকারি স্কুল ও কলেজ এমপিওভুক্ত হওয়ায় অর্থনীতি
-                বদলে যায়। তিনি ব্যপক সামাজিক উন্নয়ন মূলক কাজে ফান্ডিং এর
-                ব্যবস্থা করেন।
+                {language === "bn"
+                  ? "ঠাকুরগাঁওয়ের সব বেসরকারি স্কুল ও কলেজ এমপিওভুক্ত হওয়ায় অর্থনীতি বদলে যায়। তিনি ব্যপক সামাজিক উন্নয়ন মূলক কাজে ফান্ডিং এর ব্যবস্থা করেন।"
+                  : "The inclusion of all private schools and colleges in Thakurgaon in the MPO significantly transformed the economy. He organized funding for widespread social development projects."}
               </p>
             </div>
           </div>

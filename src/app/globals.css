@@ -60,8 +60,9 @@
   * {
     border-radius: 0 !important;
     box-shadow: none !important;
-    border-color: #e5e5e5; /* Direct fallback */
+    border-color: #006a4e !important; /* Force all borders to deep green */
   }
+
   body {
     scroll-behavior: smooth;
     background-color: var(--background);

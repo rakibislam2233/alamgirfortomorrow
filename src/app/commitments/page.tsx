@@ -1,23 +1,27 @@
+"use client";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
-import { SITE_DATA } from "@/lib/constants";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CommitmentsPage() {
+  const { language, t } = useLanguage();
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="bg-black py-16 sm:py-24 md:py-32 text-white">
+      <section className="bg-[#002B1F] py-16 sm:py-24 md:py-32 text-white">
         <div className="container mx-auto px-4 sm:px-6">
           <span className="bengali mb-4 block text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-primary italic">
-            — আমাদের ইশতেহার
+            — {language === "bn" ? "আমাদের ইশতেহার" : "Our Manifesto"}
           </span>
           <h1 className="bengali text-4xl font-black leading-tight tracking-tighter sm:text-6xl md:text-8xl">
-            আমার ৭টি অঙ্গীকার
+            {language === "bn" ? "আমার ৭টি অঙ্গীকার" : "My 7 Pledges"}
           </h1>
           <p className="bengali mt-6 sm:mt-8 text-lg sm:text-2xl font-medium text-neutral-400 max-w-2xl">
-            সুস্থ, শক্তিশালী ও আধুনিক ঠাকুরগাঁও গড়ার লক্ষ্যে আমাদের সুনির্দিষ্ট
-            পরিকল্পনা।
+            {language === "bn"
+              ? "সুস্থ, শক্তিশালী ও আধুনিক ঠাকুরগাঁও গড়ার লক্ষ্যে আমাদের সুনির্দিষ্ট পরিকল্পনা।"
+              : "Our specific plans to build a healthy, strong, and modern Thakurgaon."}
           </p>
         </div>
       </section>
@@ -25,10 +29,10 @@ export default function CommitmentsPage() {
       <section className="py-12 sm:py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2">
-            {SITE_DATA.commitments.map((commitment, idx) => (
+            {t.commitments.map((commitment: any, idx: number) => (
               <div
                 key={idx}
-                className="group border border-black p-8 sm:p-12 transition-none hover:bg-neutral-50"
+                className="group border border-primary p-8 sm:p-12 transition-none hover:bg-neutral-50"
               >
                 <div className="mb-8 sm:mb-12 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center border-2 border-primary text-3xl sm:text-4xl font-black text-primary">
                   {idx + 1}
@@ -49,10 +53,14 @@ export default function CommitmentsPage() {
       <section className="bg-primary py-16 sm:py-24 text-white text-center">
         <div className="container mx-auto px-4 sm:px-6">
           <h2 className="bengali text-3xl sm:text-5xl font-black mb-6 sm:mb-8 italic">
-            জনতাই শক্তি, ঠাকুরগাঁও হবে অপরাজেয়
+            {language === "bn"
+              ? "জনতাই শক্তি, ঠাকুরগাঁও হবে অপরাজেয়"
+              : "People are the Power, Thakurgaon will be Unbeatable"}
           </h2>
           <p className="bengali text-lg sm:text-xl opacity-80">
-            আমাদের সাথে যুক্ত হয়ে নতুন দিনের পথ প্রশস্ত করুন।
+            {language === "bn"
+              ? "আমাদের সাথে যুক্ত হয়ে নতুন দিনের পথ প্রশস্ত করুন।"
+              : "Join us and pave the way for a new day."}
           </p>
         </div>
       </section>
