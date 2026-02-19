@@ -1,4 +1,7 @@
 "use client";
+
+import { Footer } from "@/components/shared/Footer";
+import { Header } from "@/components/shared/Header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -15,36 +18,38 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-4">
-      <div className="max-w-md w-full text-center">
-        <div className="mb-8">
-          <h1 className="text-9xl font-black text-red-500/10">ERR</h1>
-          <div className="h-2 w-24 bg-red-500 mx-auto -mt-10" />
-        </div>
-
-        <h2 className="bengali text-3xl font-black text-black mb-4">
-          কিছু একটা ভুল হয়েছে
-        </h2>
-        <p className="bengali text-lg text-neutral-600 mb-10">
-          অনুগ্রহ করে আবার চেষ্টা করুন অথবা আমাদের টিমকে জানান।
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            onClick={() => reset()}
-            className="bengali h-auto bg-primary px-8 py-4 text-lg font-bold text-white transition-none hover:bg-primary/90 border-2 border-primary cursor-pointer"
-          >
-            আবার চেষ্টা করুন
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            className="bengali h-auto border-2 border-primary px-8 py-4 text-lg font-bold text-primary hover:bg-primary/5 cursor-pointer"
-          >
-            <Link href="/">হোমে ফিরে যান</Link>
-          </Button>
+    <main className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <div className="grow flex items-center justify-center py-32 px-4">
+        <div className="text-center">
+          <h1 className="bengali text-9xl font-black text-primary/10 mb-[-40px]">
+            Error
+          </h1>
+          <h2 className="bengali text-3xl md:text-5xl font-black text-black mb-6">
+            কিছু একটা ভুল হয়েছে
+          </h2>
+          <p className="bengali text-lg text-neutral-600 mb-10 max-w-md mx-auto">
+            দুঃখিত, অ্যাপ্লিকেশনটি লোড করার সময় একটি ত্রুটি ঘটেছে। অনুগ্রহ করে
+            আবার চেষ্টা করুন।
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              onClick={() => reset()}
+              className="bengali bg-primary text-white h-14 px-8 text-lg font-bold hover:bg-primary"
+            >
+              আবার চেষ্টা করুন
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="bengali border-primary text-primary h-14 px-8 text-lg font-bold"
+            >
+              <Link href="/">হোমে ফিরে যান</Link>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 }

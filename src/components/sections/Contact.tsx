@@ -4,7 +4,7 @@ import { SITE_DATA } from "@/lib/constants";
 import { Facebook, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 export function Contact() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section id="contact" className="bg-white py-24 md:py-32">
@@ -12,17 +12,13 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-              — {language === "bn" ? "যোগাযোগ করুন" : "Contact Us"}
+              — {t.contactSection.label}
             </span>
             <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-6xl mb-8">
-              {language === "bn"
-                ? "অফিসের ঠিকানা ও যোগাযোগের মাধ্যম"
-                : "Office Address & Contact Methods"}
+              {t.contactSection.title}
             </h2>
             <p className="bengali text-xl text-neutral-600 leading-relaxed max-w-lg">
-              {language === "bn"
-                ? "যেকোনো প্রয়োজনে আমাদের অফিসিয়াল মাধ্যমগুলোতে যোগাযোগ করুন অথবা সরাসরি আমাদের অফিসে চলে আসুন।"
-                : "For any queries, please reach out via our official channels or visit our office directly."}
+              {t.contactSection.subtitle}
             </p>
           </div>
 
@@ -34,7 +30,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {language === "bn" ? "অফিস" : "Office"}
+                    {t.contactSection.officeLabel}
                   </h4>
                   <p className="bengali text-neutral-600 italic leading-relaxed">
                     {t.contact.address}
@@ -47,7 +43,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {language === "bn" ? "ফোনালাপ" : "Phone"}
+                    {t.contactSection.phoneLabel}
                   </h4>
                   <p className="bengali text-neutral-600 italic">
                     {t.contact.phone}
@@ -60,7 +56,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {language === "bn" ? "ইমেইল" : "Email"}
+                    {t.contactSection.emailLabel}
                   </h4>
                   <p className="bengali text-neutral-600 italic">
                     {t.contact.email}
@@ -73,7 +69,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h4 className="bengali text-xl font-bold mb-2 italic">
-                    {language === "bn" ? "সামাজিক যোগাযোগ" : "Social Media"}
+                    {t.contactSection.socialLabel}
                   </h4>
                   <div className="flex gap-4">
                     <a

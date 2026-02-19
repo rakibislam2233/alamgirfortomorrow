@@ -26,32 +26,20 @@ import * as z from "zod";
 
 export function ProblemForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
 
   const formSchema = z.object({
     name: z.string().min(2, {
-      message:
-        language === "bn"
-          ? "অনুগ্রহ করে আপনার নাম লিখুন।"
-          : "Please enter your name.",
+      message: t.problemForm.validation.name,
     }),
     area: z.string().min(2, {
-      message:
-        language === "bn"
-          ? "আপনার এলাকার নাম লিখুন।"
-          : "Please enter your area.",
+      message: t.problemForm.validation.area,
     }),
     problemType: z.string().min(1, {
-      message:
-        language === "bn"
-          ? "সমস্যার ধরন নির্বাচন করুন।"
-          : "Please select a problem type.",
+      message: t.problemForm.validation.type,
     }),
     description: z.string().min(10, {
-      message:
-        language === "bn"
-          ? "সমস্যার বিস্তারিত বিবরণ দিন (অন্তত ১০ অক্ষর)।"
-          : "Please describe the problem (at least 10 chars).",
+      message: t.problemForm.validation.description,
     }),
     phone: z.string().optional(),
   });
@@ -76,18 +64,16 @@ export function ProblemForm() {
     return (
       <div className="w-full container mx-auto px-4 sm:px-6 bg-primary py-8 sm:py-12 text-white mt-24 md:mt-32">
         <h3 className="bengali text-2xl sm:text-3xl font-bold mb-4">
-          {language === "bn" ? "ধন্যবাদ!" : "Thank You!"}
+          {t.problemForm.successTitle}
         </h3>
         <p className="bengali text-lg sm:text-xl leading-relaxed">
-          {language === "bn"
-            ? "আপনার সমস্যাটি সফলভাবে জমা দেওয়া হয়েছে। আমরা আপনার সাথে শীঘ্রই যোগাযোগ করব।"
-            : "Your problem has been submitted successfully. We will contact you soon."}
+          {t.problemForm.successMessage}
         </p>
         <Button
           onClick={() => setIsSubmitted(false)}
           className="mt-8 bg-white border-white text-primary hover:bg-white/90 hover:text-primary cursor-pointer"
         >
-          {language === "bn" ? "আরেকটি সমস্যা জানান" : "Report another problem"}
+          {t.problemForm.reportAnother}
         </Button>
       </div>
     );
@@ -102,22 +88,16 @@ export function ProblemForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
           <div>
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-              — {language === "bn" ? "সরাসরি অভিযোগ" : "Direct Complaint"}
+              — {t.problemForm.label}
             </span>
             <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl mb-8">
-              {language === "bn"
-                ? "আপনার অভিযোগ বা সমস্যা আমাদের জানান"
-                : "Report Your Complaints or Problems"}
+              {t.problemForm.title}
             </h2>
             <p className="bengali text-xl text-neutral-600 leading-relaxed mb-8">
-              {language === "bn"
-                ? "আপনার এলাকার সমস্যা যেমন চাঁদাবাজি, দখলবাজি বা অন্য কোনো অনিয়মের কথা সরাসরি আমাদের জানান। আপনার পরিচয় গোপন রাখা হবে।"
-                : "Report issues in your area such as extortion, occupation, or any other irregularities directly to us. Your identity will be kept confidential."}
+              {t.problemForm.description}
             </p>
             <div className="p-8 bg-white border border-primary italic text-sm text-neutral-500">
-              {language === "bn"
-                ? "প্রাইভেসি ডিসক্লেমার: আপনার ব্যক্তিগত তথ্য শুধুমাত্র সমস্যা সমাধানের উদ্দেশ্যে ব্যবহার করা হবে এবং তা তৃতীয় পক্ষের কাছে প্রকাশ করা হবে না।"
-                : "Privacy Disclaimer: Your personal information will only be used for the purpose of resolving the issue and will not be disclosed to third parties."}
+              {t.problemForm.disclaimer}
             </div>
           </div>
 
@@ -134,13 +114,11 @@ export function ProblemForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="bengali font-bold text-sm sm:text-base">
-                          {language === "bn" ? "আপনার নাম" : "Your Name"}
+                          {t.problemForm.fields.name}
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder={
-                              language === "bn" ? "নাম লিখুন" : "Enter name"
-                            }
+                            placeholder={t.problemForm.fields.namePlaceholder}
                             className="border-primary h-12"
                             {...field}
                           />
@@ -155,13 +133,11 @@ export function ProblemForm() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="bengali font-bold text-sm sm:text-base">
-                          {language === "bn" ? "এলাকা/গ্রাম" : "Area/Village"}
+                          {t.problemForm.fields.area}
                         </FormLabel>
                         <FormControl>
                           <Input
-                            placeholder={
-                              language === "bn" ? "এলাকার নাম" : "Area name"
-                            }
+                            placeholder={t.problemForm.fields.areaPlaceholder}
                             className="border-primary h-12"
                             {...field}
                           />
@@ -178,7 +154,7 @@ export function ProblemForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="bengali font-bold text-sm sm:text-base">
-                        {language === "bn" ? "সমস্যার ধরন" : "Problem Type"}
+                        {t.problemForm.fields.problemType}
                       </FormLabel>
                       <Select
                         onValueChange={field.onChange}
@@ -188,25 +164,23 @@ export function ProblemForm() {
                           <SelectTrigger className="border-primary h-12">
                             <SelectValue
                               placeholder={
-                                language === "bn" ? "নির্বাচন করুন" : "Select"
+                                t.problemForm.fields.problemTypePlaceholder
                               }
                             />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="border-primary rounded-none">
                           <SelectItem value="extortion">
-                            {language === "bn" ? "চাঁদাবাজি" : "Extortion"}
+                            {t.problemForm.fields.problemTypes.extortion}
                           </SelectItem>
                           <SelectItem value="land-grabbing">
-                            {language === "bn" ? "দখলবাজি" : "Land Grabbing"}
+                            {t.problemForm.fields.problemTypes.landGrabbing}
                           </SelectItem>
                           <SelectItem value="injustice">
-                            {language === "bn"
-                              ? "অন্যায় / জুলুম"
-                              : "Injustice / Oppression"}
+                            {t.problemForm.fields.problemTypes.injustice}
                           </SelectItem>
                           <SelectItem value="other">
-                            {language === "bn" ? "অন্যান্য" : "Others"}
+                            {t.problemForm.fields.problemTypes.other}
                           </SelectItem>
                         </SelectContent>
                       </Select>
@@ -221,16 +195,12 @@ export function ProblemForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="bengali font-bold text-sm sm:text-base">
-                        {language === "bn"
-                          ? "সমস্যার বিবরণ"
-                          : "Description of the Problem"}
+                        {t.problemForm.fields.problemDescription}
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder={
-                            language === "bn"
-                              ? "বিস্তারিত লিখুন..."
-                              : "Write in detail..."
+                            t.problemForm.fields.problemDescriptionPlaceholder
                           }
                           className="border-primary min-h-[150px]"
                           {...field}
@@ -247,9 +217,7 @@ export function ProblemForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="bengali font-bold text-sm sm:text-base">
-                        {language === "bn"
-                          ? "ফোন নম্বর (ঐচ্ছিক)"
-                          : "Phone Number (Optional)"}
+                        {t.problemForm.fields.phone}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -259,9 +227,7 @@ export function ProblemForm() {
                         />
                       </FormControl>
                       <FormDescription className="bengali text-[10px] text-neutral-400">
-                        {language === "bn"
-                          ? "জরুরি প্রয়োজনে যোগাযোগ করার জন্য।"
-                          : "To contact in case of emergency."}
+                        {t.problemForm.fields.phoneHint}
                       </FormDescription>
                       <FormMessage className="bengali text-xs" />
                     </FormItem>
@@ -270,9 +236,9 @@ export function ProblemForm() {
 
                 <Button
                   type="submit"
-                  className="bengali w-full bg-primary h-14 text-lg font-bold text-white transition-none hover:bg-primary"
+                  className="bengali w-full bg-primary h-14 text-lg font-bold text-white transition-none hover:bg-primary cursor-pointer"
                 >
-                  {language === "bn" ? "দাখিল করুন" : "Submit"}
+                  {t.problemForm.submit}
                 </Button>
               </form>
             </Form>

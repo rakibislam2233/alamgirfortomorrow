@@ -23,6 +23,30 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  useEffect(() => {
+    // Update document title and meta branding on client
+    const siteTitle =
+      language === "en" ? "Alamgir For Tomorrow" : "Alamgir For Tomorrow";
+    const name =
+      language === "en"
+        ? "Mirza Fakhrul Islam Alamgir"
+        : "মির্জা ফখরুল ইসলাম আলমগীর";
+    document.title = `${siteTitle} | ${name}`;
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute(
+        "content",
+        language === "en"
+          ? "Official website of Mirza Fakhrul Islam Alamgir. Journey Towards Freedom: A New Era in Thakurgaon."
+          : "মির্জা ফখরুল ইসলাম আলমগীর এর অফিসিয়াল ওয়েবসাইট। বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
+      );
+    }
+
+    // Set cookie for server-side detection
+    document.cookie = `lang=${language}; path=/; max-age=31536000; SameSite=Lax`;
+  }, [language]);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem("lang", lang);

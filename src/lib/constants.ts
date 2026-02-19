@@ -52,6 +52,59 @@ export interface SiteLanguageData {
     phone: string;
     email: string;
   };
+  constituencyData: {
+    label: string;
+    title: string;
+    unions: string;
+    unionsCount: string;
+    municipality: string;
+    municipalityCount: string;
+    voters: string;
+    votersCount: string;
+  };
+  problemForm: {
+    label: string;
+    title: string;
+    description: string;
+    disclaimer: string;
+    fields: {
+      name: string;
+      namePlaceholder: string;
+      area: string;
+      areaPlaceholder: string;
+      problemType: string;
+      problemTypePlaceholder: string;
+      problemTypes: {
+        extortion: string;
+        landGrabbing: string;
+        injustice: string;
+        other: string;
+      };
+      problemDescription: string;
+      problemDescriptionPlaceholder: string;
+      phone: string;
+      phoneHint: string;
+    };
+    submit: string;
+    successTitle: string;
+    successMessage: string;
+    reportAnother: string;
+    validation: {
+      name: string;
+      area: string;
+      type: string;
+      description: string;
+    };
+  };
+  contactSection: {
+    label: string;
+    title: string;
+    subtitle: string;
+    officeLabel: string;
+    phoneLabel: string;
+    emailLabel: string;
+    socialLabel: string;
+  };
 }
 
 export interface SiteData {
@@ -180,7 +233,7 @@ export const SITE_DATA: SiteData = {
       {
         title: "ক্রীড়া উন্নয়ন ও জিয়া মেমোরিয়াল",
         description:
-          "জিয়া মেমোরিয়াল ফুটবল টুর্নামেন্ট চালু এবং যুবসম্পৃক্ততা পুনরুজ্জীবিত করতে নিয়মিত ক্রীড়া প্রতিযোগিতা।",
+          "জিয়া মেমোরিয়াল ফুটবল টুর্মারেন্ট চালু এবং যুবসম্পৃক্ততা পুনরুজ্জীবিত করতে নিয়মিত ক্রীড়া প্রতিযোগিতা।",
         year: "২০২৪",
       },
       {
@@ -229,6 +282,63 @@ export const SITE_DATA: SiteData = {
       address: "ঠাকুরগাঁও অফিস, বিএনপি কার্যালয় রোড, ঠাকুরগাঁও।",
       phone: "+৮৮০ ১৭০০-০০০০০০",
       email: "info@alamgirfortomorrow.com",
+    },
+    constituencyData: {
+      label: "নির্বাচনী এলাকা",
+      title: "ঠাকুরগাঁও-১ নির্বাচনী এলাকা",
+      unions: "মোট ইউনিয়ন",
+      unionsCount: "২১টি",
+      municipality: "পৌরসভা",
+      municipalityCount: "১টি",
+      voters: "মোট ভোটার",
+      votersCount: "৫,৫০,০০০+",
+    },
+    problemForm: {
+      label: "সরাসরি অভিযোগ",
+      title: "আপনার অভিযোগ বা সমস্যা আমাদের জানান",
+      description:
+        "আপনার এলাকার সমস্যা যেমন চাঁদাবাজি, দখলবাজি বা অন্য কোনো অনিয়মের কথা সরাসরি আমাদের জানান। আপনার পরিচয় গোপন রাখা হবে।",
+      disclaimer:
+        "প্রাইভেসি ডিসক্লেমার: আপনার ব্যক্তিগত তথ্য শুধুমাত্র সমস্যা সমাধানের উদ্দেশ্যে ব্যবহার করা হবে এবং তা তৃতীয় পক্ষের কাছে প্রকাশ করা হবে না।",
+      fields: {
+        name: "আপনার নাম",
+        namePlaceholder: "নাম লিখুন",
+        area: "এলাকা/গ্রাম",
+        areaPlaceholder: "এলাকার নাম",
+        problemType: "সমস্যার ধরন",
+        problemTypePlaceholder: "নির্বাচন করুন",
+        problemTypes: {
+          extortion: "চাঁদাবাজি",
+          landGrabbing: "দখলবাজি",
+          injustice: "অন্যায় / জুলুম",
+          other: "অন্যান্য",
+        },
+        problemDescription: "সমস্যার বিবরণ",
+        problemDescriptionPlaceholder: "বিস্তারিত লিখুন...",
+        phone: "ফোন নম্বর (ঐচ্ছিক)",
+        phoneHint: "জরুরি প্রয়োজনে যোগাযোগ করার জন্য।",
+      },
+      submit: "দাখিল করুন",
+      successTitle: "ধন্যবাদ!",
+      successMessage:
+        "আপনার সমস্যাটি সফলভাবে জমা দেওয়া হয়েছে। আমরা আপনার সাথে শীঘ্রই যোগাযোগ করব।",
+      reportAnother: "আরেকটি সমস্যা জানান",
+      validation: {
+        name: "অনুগ্রহ করে আপনার নাম লিখুন।",
+        area: "আপনার এলাকার নাম লিখুন।",
+        type: "সমস্যার ধরন নির্বাচন করুন।",
+        description: "সমস্যার বিস্তারিত বিবরণ দিন (অন্তত ১০ অক্ষর)।",
+      },
+    },
+    contactSection: {
+      label: "যোগাযোগ করুন",
+      title: "অফিসের ঠিকানা ও যোগাযোগের মাধ্যম",
+      subtitle:
+        "যেকোনো প্রয়োজনে আমাদের অফিসিয়াল মাধ্যমগুলোতে যোগাযোগ করুন অথবা সরাসরি আমাদের অফিসে চলে আসুন।",
+      officeLabel: "অফিস",
+      phoneLabel: "ফোনালাপ",
+      emailLabel: "ইমেইল",
+      socialLabel: "সামাজিক যোগাযোগ",
     },
   },
   en: {
@@ -405,6 +515,63 @@ export const SITE_DATA: SiteData = {
       address: "Thakurgaon Office, BNP Office Road, Thakurgaon.",
       phone: "+880 1700-000000",
       email: "info@alamgirfortomorrow.com",
+    },
+    constituencyData: {
+      label: "Constituency",
+      title: "Thakurgaon-1 Constituency",
+      unions: "Total Unions",
+      unionsCount: "21",
+      municipality: "Municipality",
+      municipalityCount: "1",
+      voters: "Total Voters",
+      votersCount: "5,50,000+",
+    },
+    problemForm: {
+      label: "Direct Complaint",
+      title: "Report Your Complaints or Problems",
+      description:
+        "Report issues in your area such as extortion, occupation, or any other irregularities directly to us. Your identity will be kept confidential.",
+      disclaimer:
+        "Privacy Disclaimer: Your personal information will only be used for the purpose of resolving the issue and will not be disclosed to third parties.",
+      fields: {
+        name: "Your Name",
+        namePlaceholder: "Enter name",
+        area: "Area/Village",
+        areaPlaceholder: "Area name",
+        problemType: "Problem Type",
+        problemTypePlaceholder: "Select",
+        problemTypes: {
+          extortion: "Extortion",
+          landGrabbing: "Land Grabbing",
+          injustice: "Injustice / Oppression",
+          other: "Others",
+        },
+        problemDescription: "Description of the Problem",
+        problemDescriptionPlaceholder: "Write in detail...",
+        phone: "Phone Number (Optional)",
+        phoneHint: "To contact in case of emergency.",
+      },
+      submit: "Submit",
+      successTitle: "Thank You!",
+      successMessage:
+        "Your problem has been submitted successfully. We will contact you soon.",
+      reportAnother: "Report another problem",
+      validation: {
+        name: "Please enter your name.",
+        area: "Please enter your area.",
+        type: "Please select a problem type.",
+        description: "Please describe the problem (at least 10 chars).",
+      },
+    },
+    contactSection: {
+      label: "Contact Us",
+      title: "Office Address & Contact Methods",
+      subtitle:
+        "For any queries, please reach out via our official channels or visit our office directly.",
+      officeLabel: "Office",
+      phoneLabel: "Phone",
+      emailLabel: "Email",
+      socialLabel: "Social Media",
     },
   },
   social: {

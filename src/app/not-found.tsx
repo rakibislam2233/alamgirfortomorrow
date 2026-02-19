@@ -1,31 +1,35 @@
 "use client";
+
+import { Footer } from "@/components/shared/Footer";
+import { Header } from "@/components/shared/Header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-4">
-      <div className="max-w-md w-full text-center">
-        <div className="mb-8">
-          <h1 className="text-9xl font-black text-primary/10">404</h1>
-          <div className="h-2 w-24 bg-primary mx-auto -mt-10" />
+    <main className="min-h-screen bg-white flex flex-col">
+      <Header />
+      <div className="flex-grow flex items-center justify-center py-32 px-4">
+        <div className="text-center">
+          <h1 className="bengali text-9xl font-black text-primary/10 mb-[-40px]">
+            404
+          </h1>
+          <h2 className="bengali text-3xl md:text-5xl font-black text-black mb-6">
+            পৃষ্ঠাটি পাওয়া যায়নি
+          </h2>
+          <p className="bengali text-lg text-neutral-600 mb-10 max-w-md mx-auto">
+            দুঃখিত, আপনি যে পৃষ্ঠাটি খুঁজছেন সেটি খুঁজে পাওয়া যায়নি বা এটি সরিয়ে
+            ফেলা হয়েছে।
+          </p>
+          <Button
+            asChild
+            className="bengali bg-primary text-white h-14 px-8 text-lg font-bold hover:bg-primary"
+          >
+            <Link href="/">হোমে ফিরে যান</Link>
+          </Button>
         </div>
-
-        <h2 className="bengali text-3xl font-black text-black mb-4">
-          পৃষ্ঠাটি পাওয়া যায়নি
-        </h2>
-        <p className="bengali text-lg text-neutral-600 mb-10">
-          দুঃখিত, আপনি যে পৃষ্ঠাটি খুঁজছেন সেটি খুঁজে পাওয়া যায়নি অথবা সরিয়ে
-          ফেলা হয়েছে।
-        </p>
-
-        <Button
-          asChild
-          className="bengali h-auto bg-primary px-8 py-4 text-lg font-bold text-white transition-none hover:bg-primary/90 border-2 border-primary cursor-pointer"
-        >
-          <Link href="/">হোম পেজে ফিরে যান</Link>
-        </Button>
       </div>
-    </div>
+      <Footer />
+    </main>
   );
 }

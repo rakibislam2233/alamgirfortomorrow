@@ -2,7 +2,7 @@
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Constituency() {
-  const { language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <section className="bg-white py-24 md:py-32 border-b border-primary">
@@ -10,30 +10,28 @@ export function Constituency() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-px border border-primary bg-primary">
           <div className="lg:col-span-1 bg-white p-12 flex flex-col justify-center">
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
-              — {language === "bn" ? "নির্বাচনী এলাকা" : "Constituency"}
+              — {t.constituencyData.label}
             </span>
             <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl mb-8 leading-tight">
-              {language === "bn"
-                ? "ঠাকুরগাঁও-১ নির্বাচনী এলাকা"
-                : "Thakurgaon-1 Constituency"}
+              {t.constituencyData.title}
             </h2>
             <div className="space-y-6 bengali text-lg text-neutral-600">
               <div className="flex justify-between border-b border-neutral-100 pb-4">
-                <span>{language === "bn" ? "মোট ইউনিয়ন" : "Total Unions"}</span>
+                <span>{t.constituencyData.unions}</span>
                 <span className="font-bold text-black text-2xl">
-                  {language === "bn" ? "২১টি" : "21"}
+                  {t.constituencyData.unionsCount}
                 </span>
               </div>
               <div className="flex justify-between border-b border-neutral-100 pb-4">
-                <span>{language === "bn" ? "পৌরসভা" : "Municipality"}</span>
+                <span>{t.constituencyData.municipality}</span>
                 <span className="font-bold text-black text-2xl">
-                  {language === "bn" ? "১টি" : "1"}
+                  {t.constituencyData.municipalityCount}
                 </span>
               </div>
               <div className="flex justify-between border-b border-neutral-100 pb-4">
-                <span>{language === "bn" ? "মোট ভোটার" : "Total Voters"}</span>
+                <span>{t.constituencyData.voters}</span>
                 <span className="font-bold text-black text-2xl tracking-tighter">
-                  {language === "bn" ? "৫,৫০,০০০+" : "5,50,000+"}
+                  {t.constituencyData.votersCount}
                 </span>
               </div>
             </div>
