@@ -79,12 +79,25 @@ export function Footer() {
         </div>
 
         <div className="mt-20 border-t border-neutral-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="bengali text-sm text-neutral-500">
-            © {new Date().getFullYear()} {t.name}।{" "}
-            {language === "bn"
-              ? "সর্বস্বত্ব সংরক্ষিত।"
-              : "All Rights Reserved."}
-          </p>
+          <div className="flex flex-col items-center md:items-end gap-2 text-sm text-neutral-400">
+            <p className="bengali text-sm text-neutral-500">
+              © {new Date().getFullYear()} {t.name}।{" "}
+              {language === "bn"
+                ? "সর্বস্বত্ব সংরক্ষিত।"
+                : "All Rights Reserved."}
+            </p>
+            <p className="text-xs">
+              Developed by{" "}
+              <a
+                href="https://www.facebook.com/rakibulislamrakib.tkg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-primary hover:underline cursor-pointer"
+              >
+                Md Rakib Ali
+              </a>
+            </p>
+          </div>
           <div className="flex gap-6">
             <a
               href={SITE_DATA.social.facebook}
