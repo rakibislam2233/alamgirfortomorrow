@@ -12,7 +12,7 @@ export function Constituency() {
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
               — {language === "bn" ? "নির্বাচনী এলাকা" : "Constituency"}
             </span>
-            <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-5xl mb-8 leading-tight">
+            <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl mb-8 leading-tight">
               {language === "bn"
                 ? "ঠাকুরগাঁও-১ নির্বাচনী এলাকা"
                 : "Thakurgaon-1 Constituency"}

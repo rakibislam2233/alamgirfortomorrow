@@ -1,7 +1,7 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
 import { SITE_DATA } from "@/lib/constants";
-import { Facebook, Twitter, Youtube } from "lucide-react";
+import { Facebook, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -101,14 +101,6 @@ export function Footer() {
               className="text-neutral-400 hover:text-primary transition-none"
             >
               <Twitter size={20} />
-            </a>
-            <a
-              href={SITE_DATA.social.youtube}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-400 hover:text-primary transition-none"
-            >
-              <Youtube size={20} />
             </a>
           </div>
         </div>

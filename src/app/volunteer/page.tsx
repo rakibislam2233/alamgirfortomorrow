@@ -18,19 +18,21 @@ export default function VolunteerPage() {
 
       <section className="bg-neutral-100 py-16 sm:py-24 md:py-32 border-b border-primary">
         <div className="container mx-auto px-4 sm:px-6 text-center">
-          <span className="bengali mb-4 block text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-primary italic">
-            — {language === "bn" ? "টিম মির্জা ফখরুল" : "Team Mirza Fakhrul"}
-          </span>
-          <h1 className="bengali text-4xl font-black leading-tight tracking-tighter sm:text-6xl md:text-8xl mb-8">
-            {language === "bn"
-              ? "স্বেচ্ছাসেবক হিসেবে যুক্ত হোন"
-              : "Join as a Volunteer"}
-          </h1>
-          <p className="bengali text-lg sm:text-2xl font-medium text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-            {language === "bn"
-              ? "সাধারণ মানুষের অংশগ্রহণেই গড়ে উঠবে একটি শক্তিশালী ও আধুনিক ঠাকুরগাঁও। আমাদের ক্যাম্পেইনে স্বেচ্ছাসেবী হিসেবে কাজ করতে নিচের ফর্মটি পূরণ করুন।"
-              : "A strong and modern Thakurgaon will be built with the participation of ordinary people. Fill out the form below to volunteer for our campaign."}
-          </p>
+          <div>
+            <span className="bengali mb-4 block text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-primary italic">
+              — {language === "bn" ? "টিম মির্জা ফখরুল" : "Team Mirza Fakhrul"}
+            </span>
+            <h1 className="bengali text-4xl font-black leading-[1.05] tracking-tighter text-black sm:text-5xl md:text-6xl lg:text-7xl mb-8">
+              {language === "bn"
+                ? "স্বেচ্ছাসেবক হিসেবে যুক্ত হোন"
+                : "Join as a Volunteer"}
+            </h1>
+            <p className="bengali text-lg sm:text-xl md:text-2xl font-medium text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+              {language === "bn"
+                ? "সাধারণ মানুষের অংশগ্রহণেই গড়ে উঠবে একটি শক্তিশালী ও আধুনিক ঠাকুরগাঁও। আমাদের ক্যাম্পেইনে স্বেচ্ছাসেবী হিসেবে কাজ করতে নিচের ফর্মটি পূরণ করুন।"
+                : "A strong and modern Thakurgaon will be built with the participation of ordinary people. Fill out the form below to volunteer for our campaign."}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -152,7 +154,7 @@ export default function VolunteerPage() {
 
                 <Button
                   type="submit"
-                  className="bengali w-full h-16 sm:h-20 bg-primary text-xl sm:text-2xl font-black text-white"
+                  className="bengali w-full h-16 sm:h-20 bg-primary text-xl sm:text-2xl font-black text-white transition-none hover:bg-primary/90"
                 >
                   {language === "bn" ? "টিমে যোগ দিন →" : "Join the Team →"}
                 </Button>

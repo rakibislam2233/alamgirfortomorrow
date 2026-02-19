@@ -1,4 +1,69 @@
-export const SITE_DATA = {
+export type Language = "bn" | "en";
+
+export interface Milestone {
+  year: string;
+  event: string;
+}
+
+export interface Achievement {
+  title: string;
+  description: string;
+  year?: string;
+}
+
+export interface ContributionItem {
+  title: string;
+  description: string;
+}
+
+export interface SiteLanguageData {
+  name: string;
+  displayTitle: string;
+  title: string;
+  party: string;
+  constituency: string;
+  slogan: string;
+  hero: {
+    tagline: string;
+    subline: string;
+    cta: string;
+    quote: string;
+  };
+  about: {
+    title: string;
+    subtitle: string;
+    content: string;
+    history: string;
+    fullBio: {
+      birth: string;
+      education: string;
+      professional: string;
+      milestones: Milestone[];
+    };
+  };
+  commitments: Achievement[];
+  achievements: Achievement[];
+  contributions: {
+    national: ContributionItem[];
+    local: ContributionItem[];
+  };
+  contact: {
+    address: string;
+    phone: string;
+    email: string;
+  };
+}
+
+export interface SiteData {
+  bn: SiteLanguageData;
+  en: SiteLanguageData;
+  social: {
+    facebook: string;
+    twitter: string;
+  };
+}
+
+export const SITE_DATA: SiteData = {
   bn: {
     name: "মির্জা ফখরুল ইসলাম আলমগীর",
     displayTitle: "Alamgirfortomorrow",
@@ -345,6 +410,5 @@ export const SITE_DATA = {
   social: {
     facebook: "https://www.facebook.com/MirzaAlamgir/",
     twitter: "https://x.com/BNPSGOffice",
-    youtube: "https://youtube.com",
   },
 };

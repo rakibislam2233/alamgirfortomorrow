@@ -16,7 +16,7 @@ export function About() {
           <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
             — {language === "bn" ? "জীবন ও রাজনীতি" : "Life & Politics"}
           </span>
-          <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-6xl mb-6">
+          <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl mb-6">
             {t.about.title}
           </h2>
           <p className="bengali text-xl font-bold text-neutral-500 italic">
@@ -26,7 +26,7 @@ export function About() {
 
         <div className="flex flex-col gap-16 lg:flex-row lg:items-center">
           <div className="space-y-12 lg:w-3/5">
-            <p className="bengali text-2xl leading-relaxed text-neutral-800 md:text-3xl font-light">
+            <p className="bengali text-xl leading-relaxed text-neutral-800 md:text-2xl lg:text-3xl font-light">
               “{t.about.content}”
             </p>
             <p className="bengali text-lg leading-relaxed text-neutral-500 italic">

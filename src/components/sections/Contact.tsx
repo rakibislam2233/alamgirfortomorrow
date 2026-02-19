@@ -1,7 +1,7 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
 import { SITE_DATA } from "@/lib/constants";
-import { Facebook, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
+import { Facebook, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 export function Contact() {
   const { language, t } = useLanguage();
@@ -92,16 +92,6 @@ export function Contact() {
                       rel="noopener noreferrer"
                     >
                       <Twitter
-                        size={20}
-                        className="text-neutral-400 hover:text-primary"
-                      />
-                    </a>
-                    <a
-                      href={SITE_DATA.social.youtube}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Youtube
                         size={20}
                         className="text-neutral-400 hover:text-primary"
                       />

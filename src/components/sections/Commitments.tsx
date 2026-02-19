@@ -1,5 +1,6 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
+import { Achievement } from "@/lib/constants";
 
 export function Commitments() {
   const { language, t } = useLanguage();
@@ -12,14 +13,14 @@ export function Commitments() {
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
               — {language === "bn" ? "আমাদের প্রতিশ্রুতি" : "Our Commitments"}
             </span>
-            <h2 className="bengali text-4xl font-black tracking-tight text-white md:text-6xl">
+            <h2 className="bengali text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               {language === "bn" ? "আমার ৭টি অঙ্গীকার" : "My 7 Pledges"}
             </h2>
           </div>
         </div>
 
         <div className="grid grid-cols-1 gap-px bg-[#004D39] sm:grid-cols-2 lg:grid-cols-4 border border-[#004D39]">
-          {t.commitments.map((item: any, index: number) => (
+          {t.commitments.map((item: Achievement, index: number) => (
             <div
               key={index}
               className="group bg-[#002B1F] p-8 sm:p-12 transition-none"
@@ -36,7 +37,7 @@ export function Commitments() {
             </div>
           ))}
           <div className="bg-primary p-8 sm:p-12 flex flex-col justify-end">
-            <h3 className="bengali text-2xl sm:text-3xl font-black text-white leading-tight">
+            <h3 className="bengali text-xl sm:text-2xl lg:text-3xl font-black text-white leading-tight">
               {language === "bn" ? "জনতাই শক্তি" : "People are the Power"}
               <br />
               {language === "bn"

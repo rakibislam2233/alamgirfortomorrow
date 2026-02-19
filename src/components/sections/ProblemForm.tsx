@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -75,11 +74,11 @@ export function ProblemForm() {
 
   if (isSubmitted) {
     return (
-      <div className="bg-primary p-12 text-white border border-primary">
-        <h3 className="bengali text-3xl font-bold mb-4">
+      <div className="w-full container mx-auto bg-primary p-8 sm:p-12 text-white">
+        <h3 className="bengali text-2xl sm:text-3xl font-bold mb-4">
           {language === "bn" ? "ধন্যবাদ!" : "Thank You!"}
         </h3>
-        <p className="bengali text-xl leading-relaxed">
+        <p className="bengali text-lg sm:text-xl leading-relaxed">
           {language === "bn"
             ? "আপনার সমস্যাটি সফলভাবে জমা দেওয়া হয়েছে। আমরা আপনার সাথে শীঘ্রই যোগাযোগ করব।"
             : "Your problem has been submitted successfully. We will contact you soon."}
@@ -106,7 +105,7 @@ export function ProblemForm() {
             <span className="bengali text-sm font-bold uppercase tracking-widest text-primary mb-4 block italic">
               — {language === "bn" ? "সরাসরি অভিযোগ" : "Direct Complaint"}
             </span>
-            <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-6xl mb-8">
+            <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl mb-8">
               {language === "bn"
                 ? "আপনার অভিযোগ বা সমস্যা আমাদের জানান"
                 : "Report Your Complaints or Problems"}
@@ -123,7 +122,7 @@ export function ProblemForm() {
             </div>
           </div>
 
-          <div className="bg-white p-10 md:p-14 border border-primary">
+          <div className="bg-white p-8 sm:p-10 md:p-14 border border-primary">
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -135,7 +134,7 @@ export function ProblemForm() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="bengali font-bold">
+                        <FormLabel className="bengali font-bold text-sm sm:text-base">
                           {language === "bn" ? "আপনার নাম" : "Your Name"}
                         </FormLabel>
                         <FormControl>
@@ -156,7 +155,7 @@ export function ProblemForm() {
                     name="area"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="bengali font-bold">
+                        <FormLabel className="bengali font-bold text-sm sm:text-base">
                           {language === "bn" ? "এলাকা/গ্রাম" : "Area/Village"}
                         </FormLabel>
                         <FormControl>
@@ -179,7 +178,7 @@ export function ProblemForm() {
                   name="problemType"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="bengali font-bold">
+                      <FormLabel className="bengali font-bold text-sm sm:text-base">
                         {language === "bn" ? "সমস্যার ধরন" : "Problem Type"}
                       </FormLabel>
                       <Select
@@ -222,7 +221,7 @@ export function ProblemForm() {
                   name="description"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="bengali font-bold">
+                      <FormLabel className="bengali font-bold text-sm sm:text-base">
                         {language === "bn"
                           ? "সমস্যার বিবরণ"
                           : "Description of the Problem"}
@@ -248,7 +247,7 @@ export function ProblemForm() {
                   name="phone"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="bengali font-bold">
+                      <FormLabel className="bengali font-bold text-sm sm:text-base">
                         {language === "bn"
                           ? "ফোন নম্বর (ঐচ্ছিক)"
                           : "Phone Number (Optional)"}

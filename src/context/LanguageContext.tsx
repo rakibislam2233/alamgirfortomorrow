@@ -1,20 +1,17 @@
 "use client";
 
+import { Language, SITE_DATA, SiteLanguageData } from "@/lib/constants";
 import React, { createContext, useContext, useEffect, useState } from "react";
-
-type Language = "bn" | "en";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: any;
+  t: SiteLanguageData;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined,
 );
-
-import { SITE_DATA } from "@/lib/constants";
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>("bn");

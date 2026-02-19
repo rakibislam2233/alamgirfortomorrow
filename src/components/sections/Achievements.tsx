@@ -1,5 +1,6 @@
 "use client";
 import { useLanguage } from "@/context/LanguageContext";
+import { Achievement, ContributionItem } from "@/lib/constants";
 
 export function Achievements() {
   const { language, t } = useLanguage();
@@ -17,7 +18,7 @@ export function Achievements() {
               ? "ঠাকুরগাঁও ও জাতীয় পর্যায়ে"
               : "At Local & National Levels"}
           </span>
-          <h2 className="bengali text-4xl font-black tracking-tight text-black md:text-6xl">
+          <h2 className="bengali text-3xl font-black tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl">
             {language === "bn" ? "কাজ ও অবদান" : "Work & Contributions"}
           </h2>
         </div>
@@ -33,13 +34,13 @@ export function Achievements() {
             <div className="space-y-8">
               {t.achievements
                 .filter(
-                  (a: any) =>
+                  (a: Achievement) =>
                     a.year === "২০২৪" ||
                     a.year === "২০২৫" ||
                     a.year === "2024" ||
                     a.year === "2025",
                 )
-                .map((item: any, idx: number) => (
+                .map((item: Achievement, idx: number) => (
                   <div key={idx} className="group">
                     <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
@@ -63,14 +64,16 @@ export function Achievements() {
             <div className="space-y-8">
               {t.achievements
                 .filter(
-                  (a: any) =>
-                    a.year === "২০০৫" ||
+                  (a: Achievement) =>
+                    a.year === "২০২০০" ||
                     a.year === "2005" ||
-                    a.year === "২০০১-২০০৬" ||
+                    a.year === "২০০৫" ||
+                    a.year === "২০২০০-২০০৬" ||
                     a.year === "2001-2006" ||
+                    a.year === "২০০১-২০০৬" ||
                     a.title.includes("ESDO"),
                 )
-                .map((item: any, idx: number) => (
+                .map((item: Achievement, idx: number) => (
                   <div key={idx} className="group">
                     <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
@@ -92,17 +95,19 @@ export function Achievements() {
                 : "National Contributions (2001–2006)"}
             </h3>
             <div className="space-y-8">
-              {t.contributions.national.map((item: any, idx: number) => (
-                <div key={idx} className="group">
-                  <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
-                    <span className="text-primary">→</span>
-                    {item.title}
-                  </h4>
-                  <p className="bengali text-neutral-600 leading-relaxed pl-7 text-sm sm:text-base">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+              {t.contributions.national.map(
+                (item: ContributionItem, idx: number) => (
+                  <div key={idx} className="group">
+                    <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
+                      <span className="text-primary">→</span>
+                      {item.title}
+                    </h4>
+                    <p className="bengali text-neutral-600 leading-relaxed pl-7 text-sm sm:text-base">
+                      {item.description}
+                    </p>
+                  </div>
+                ),
+              )}
             </div>
           </div>
 
@@ -114,20 +119,22 @@ export function Achievements() {
                 : "BNP Initiatives in Thakurgaon (1991–2006)"}
             </h3>
             <div className="space-y-6">
-              {t.contributions.local.map((item: any, idx: number) => (
-                <div
-                  key={idx}
-                  className="flex font-bold items-start gap-4 text-sm sm:text-base"
-                >
-                  <span className="text-primary text-xl">●</span>
-                  <div className="bengali">
-                    <span className="text-black">{item.title}:</span>{" "}
-                    <span className="text-neutral-500 font-medium">
-                      {item.description}
-                    </span>
+              {t.contributions.local.map(
+                (item: ContributionItem, idx: number) => (
+                  <div
+                    key={idx}
+                    className="flex font-bold items-start gap-4 text-sm sm:text-base"
+                  >
+                    <span className="text-primary text-xl">●</span>
+                    <div className="bengali">
+                      <span className="text-black">{item.title}:</span>{" "}
+                      <span className="text-neutral-500 font-medium">
+                        {item.description}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ),
+              )}
               <p className="bengali text-neutral-600 pt-4 italic font-medium text-sm sm:text-base">
                 {language === "bn"
                   ? "ঠাকুরগাঁওয়ের সব বেসরকারি স্কুল ও কলেজ এমপিওভুক্ত হওয়ায় অর্থনীতি বদলে যায়। তিনি ব্যপক সামাজিক উন্নয়ন মূলক কাজে ফান্ডিং এর ব্যবস্থা করেন।"
