@@ -1,5 +1,4 @@
 "use client";
-
 import alamgirImg from "@/assets/images/alamgir.jpg";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";

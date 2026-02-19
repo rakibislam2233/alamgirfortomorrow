@@ -1,13 +1,16 @@
 "use client";
+import { Achievement, ContributionItem } from "@/types";
 import { useLocale, useTranslations } from "next-intl";
 
 export function Achievements() {
   const locale = useLocale();
   const t = useTranslations();
 
-  const achievementsList = t.raw("achievements");
-  const nationalContributions = t.raw("contributions.national");
-  const localContributions = t.raw("contributions.local");
+  const achievementsList = t.raw("AchievementsSection.items") as Achievement[];
+  const nationalContributions = t.raw(
+    "contributions.national",
+  ) as ContributionItem[];
+  const localContributions = t.raw("contributions.local") as ContributionItem[];
 
   return (
     <section
@@ -38,13 +41,13 @@ export function Achievements() {
             <div className="space-y-8">
               {achievementsList
                 .filter(
-                  (a: any) =>
+                  (a) =>
                     a.year === "২০২৪" ||
                     a.year === "২০২৫" ||
                     a.year === "2024" ||
                     a.year === "2025",
                 )
-                .map((item: any, idx: number) => (
+                .map((item, idx) => (
                   <div key={idx} className="group">
                     <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
@@ -68,7 +71,7 @@ export function Achievements() {
             <div className="space-y-8">
               {achievementsList
                 .filter(
-                  (a: any) =>
+                  (a) =>
                     a.year === "২০০১-২০০৬" ||
                     a.year === "2001-2006" ||
                     a.year === "২০০৫" ||
@@ -77,7 +80,7 @@ export function Achievements() {
                     a.year === "1991-2006" ||
                     a.title.includes("ESDO"),
                 )
-                .map((item: any, idx: number) => (
+                .map((item, idx) => (
                   <div key={idx} className="group">
                     <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
@@ -99,7 +102,7 @@ export function Achievements() {
                 : "National Contributions (2001–2006)"}
             </h3>
             <div className="space-y-8">
-              {nationalContributions.map((item: any, idx: number) => (
+              {nationalContributions.map((item, idx) => (
                 <div key={idx} className="group">
                   <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                     <span className="text-primary">→</span>
@@ -121,7 +124,7 @@ export function Achievements() {
                 : "BNP Initiatives in Thakurgaon (1991–2006)"}
             </h3>
             <div className="space-y-6">
-              {localContributions.map((item: any, idx: number) => (
+              {localContributions.map((item, idx) => (
                 <div
                   key={idx}
                   className="flex font-bold items-start gap-4 text-sm sm:text-base"

@@ -1,12 +1,13 @@
 "use client";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
+import { Milestone } from "@/types";
 import { useLocale, useTranslations } from "next-intl";
 
 export function AboutPageClient() {
   const t = useTranslations("About");
   const locale = useLocale();
-  const milestones = t.raw("milestones");
+  const milestones = t.raw("milestones") as Milestone[];
 
   return (
     <main className="min-h-screen bg-white">
@@ -67,7 +68,7 @@ export function AboutPageClient() {
                       : "Political Milestones"}
                   </h2>
                   <div className="space-y-8 border-l-2 sm:border-l-4 border-primary pl-6 sm:pl-12">
-                    {milestones.map((milestone: any, idx: number) => (
+                    {milestones.map((milestone, idx) => (
                       <div key={idx}>
                         <div className="text-2xl sm:text-3xl font-black text-primary">
                           {milestone.year}

@@ -85,38 +85,40 @@
       }
     ]
   },
-  "achievements": [
-    {
-      "title": "Reconstruction of Thakurgaon Central Mosque",
-      "description": "Inauguration of a 6-story modern mosque project worth 34 crore BDT in April 2025.",
-      "year": "2025"
-    },
-    {
-      "title": "Barendra Underground Irrigation",
-      "description": "Transformation of 1,337 tubewells into underground pipeline networks, saving land and water.",
-      "year": "2005"
-    },
-    {
-      "title": "Technical Training Center",
-      "description": "Established TTC and Polytechnic in Gobindanagar for technical education expansion.",
-      "year": "2001-2006"
-    },
-    {
-      "title": "Digital Access & Wi-Fi",
-      "description": "Launched free Wi-Fi zones in Thakurgaon city, now a nationwide model.",
-      "year": "2025"
-    },
-    {
-      "title": "Sports & Zia Memorial",
-      "description": "Launched Zia Memorial Football Tournament to re-engage youth in sports.",
-      "year": "2024"
-    },
-    {
-      "title": "Education & Infrastructure (ESDO)",
-      "description": "MPOs for private schools/colleges, road and bridge construction through ESDO.",
-      "year": "1991-2006"
-    }
-  ],
+  "AchievementsSection": {
+    "items": [
+      {
+        "title": "Reconstruction of Thakurgaon Central Mosque",
+        "description": "Inauguration of a 6-story modern mosque project worth 34 crore BDT in April 2025.",
+        "year": "2025"
+      },
+      {
+        "title": "Barendra Underground Irrigation",
+        "description": "Transformation of 1,337 tubewells into underground pipeline networks, saving land and water.",
+        "year": "2005"
+      },
+      {
+        "title": "Technical Training Center",
+        "description": "Established TTC and Polytechnic in Gobindanagar for technical education expansion.",
+        "year": "2001-2006"
+      },
+      {
+        "title": "Digital Access & Wi-Fi",
+        "description": "Launched free Wi-Fi zones in Thakurgaon city, now a nationwide model.",
+        "year": "2025"
+      },
+      {
+        "title": "Sports & Zia Memorial",
+        "description": "Launched Zia Memorial Football Tournament to re-engage youth in sports.",
+        "year": "2024"
+      },
+      {
+        "title": "Education & Infrastructure (ESDO)",
+        "description": "MPOs for private schools/colleges, road and bridge construction through ESDO.",
+        "year": "1991-2006"
+      }
+    ]
+  },
   "contributions": {
     "national": [
       {
@@ -209,11 +211,27 @@
     "reportAnother": "Report another problem",
     "fields": {
       "name": "Your Name",
+      "namePlaceholder": "Enter name",
       "area": "Area/Village",
+      "areaPlaceholder": "Area name",
       "type": "Problem Type",
+      "problemTypePlaceholder": "Select",
+      "problemTypes": {
+        "extortion": "Extortion",
+        "landGrabbing": "Land Grabbing",
+        "injustice": "Injustice/Oppression",
+        "other": "Others"
+      },
       "description": "Description of the Problem",
+      "problemDescriptionPlaceholder": "Detailed description...",
       "phone": "Phone Number (Optional)",
       "phoneHint": "To contact in case of emergency."
+    },
+    "validation": {
+      "name": "Name is required",
+      "area": "Area is required",
+      "type": "Type is required",
+      "description": "Description is required (min 10 chars)"
     }
   },
   "Constituency": {

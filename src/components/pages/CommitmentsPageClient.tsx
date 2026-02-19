@@ -1,11 +1,12 @@
 "use client";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
+import { Achievement } from "@/types";
 import { useTranslations } from "next-intl";
 
 export function CommitmentsPageClient() {
   const t = useTranslations("CommitmentsPage");
-  const items = useTranslations("Commitments").raw("items");
+  const items = useTranslations("Commitments").raw("items") as Achievement[];
 
   return (
     <main className="min-h-screen bg-white">
@@ -30,7 +31,7 @@ export function CommitmentsPageClient() {
       <section className="py-12 sm:py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2">
-            {items.map((commitment: any, idx: number) => (
+            {items.map((commitment, idx) => (
               <div
                 key={idx}
                 className="group border border-primary p-8 sm:p-12 transition-none hover:bg-neutral-50"
