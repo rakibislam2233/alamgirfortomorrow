@@ -15,25 +15,28 @@ export function Commitments() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-px bg-neutral-800 md:grid-cols-2 lg:grid-cols-4 border border-neutral-800">
+        <div className="grid grid-cols-1 gap-px bg-neutral-800 sm:grid-cols-2 lg:grid-cols-4 border border-neutral-800">
           {SITE_DATA.commitments.map((item, index) => (
-            <div key={index} className="group bg-black p-12 transition-none">
+            <div
+              key={index}
+              className="group bg-black p-8 sm:p-12 transition-none"
+            >
               <div className="mb-8 flex h-14 w-14 items-center justify-center border border-primary text-primary transition-none">
                 <span className="text-2xl font-black">{index + 1}</span>
               </div>
-              <h3 className="bengali mb-4 text-2xl font-bold text-white">
+              <h3 className="bengali mb-4 text-xl sm:text-2xl font-bold text-white">
                 {item.title}
               </h3>
-              <p className="bengali leading-relaxed text-neutral-400">
+              <p className="bengali text-sm sm:text-base leading-relaxed text-neutral-400">
                 {item.description}
               </p>
             </div>
           ))}
-          <div className="bg-primary p-12 flex flex-col justify-end">
-            <h3 className="bengali text-3xl font-black text-white leading-none">
+          <div className="bg-primary p-8 sm:p-12 flex flex-col justify-end">
+            <h3 className="bengali text-2xl sm:text-3xl font-black text-white leading-tight">
               জনতাই শক্তি
               <br />
-              ঠাকুরগাঁও হবে অপরাজেয়
+              ठाकুরগাঁও হবে অপরাজেয়
             </h3>
           </div>
         </div>

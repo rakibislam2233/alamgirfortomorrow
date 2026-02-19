@@ -27,34 +27,36 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <Hero />
-      <QuoteSection />
-      <motion.div {...fadeIn}>
-        <About />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <Commitments />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <Constituency />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <Achievements />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <ProblemForm />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <News />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <Gallery />
-      </motion.div>
-      <motion.div {...fadeIn}>
-        <Contact />
-      </motion.div>
-      <Footer />
-      <FloatingProblemButton />
+      <section className="w-full pt-20">
+        <Hero />
+        <QuoteSection />
+        <motion.div {...fadeIn}>
+          <About />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <Commitments />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <Constituency />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <Achievements />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <ProblemForm />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <News />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <Gallery />
+        </motion.div>
+        <motion.div {...fadeIn}>
+          <Contact />
+        </motion.div>
+        <Footer />
+        <FloatingProblemButton />
+      </section>
     </main>
   );
 }

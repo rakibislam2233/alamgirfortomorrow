@@ -20,7 +20,7 @@ export function Gallery() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-black border border-black italic">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black border border-black italic">
           {items.map((item, i) => (
             <div
               key={i}

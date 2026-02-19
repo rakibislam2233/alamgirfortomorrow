@@ -34,19 +34,19 @@ export function About() {
 
             <Button
               asChild
-              className="bengali h-14 bg-primary text-lg font-bold"
+              className="bengali h-14 bg-primary text-lg font-bold w-full sm:w-auto"
             >
               <Link href="/about">আরও পড়ুন →</Link>
             </Button>
           </div>
 
-          <div className="hidden lg:block lg:w-2/5">
-            <div className="border border-black p-12 bg-neutral-50 space-y-8">
+          <div className="lg:w-2/5">
+            <div className="border border-black p-8 sm:p-12 bg-neutral-50 space-y-8">
               <div className="space-y-2">
                 <div className="text-xs font-bold uppercase tracking-widest text-neutral-400">
                   জন্ম
                 </div>
-                <div className="bengali font-black text-xl">
+                <div className="bengali font-black text-xl sm:text-2xl">
                   {SITE_DATA.about.fullBio?.birth}
                 </div>
               </div>
@@ -55,7 +55,7 @@ export function About() {
                 <div className="text-xs font-bold uppercase tracking-widest text-neutral-400">
                   শিক্ষা
                 </div>
-                <div className="bengali font-black text-xl">
+                <div className="bengali font-black text-xl sm:text-2xl">
                   {SITE_DATA.about.fullBio?.education}
                 </div>
               </div>
@@ -64,7 +64,7 @@ export function About() {
                 <div className="text-xs font-bold uppercase tracking-widest text-neutral-400">
                   বর্তমান পদ
                 </div>
-                <div className="bengali font-black text-xl">
+                <div className="bengali font-black text-xl sm:text-2xl">
                   {SITE_DATA.party}
                 </div>
               </div>

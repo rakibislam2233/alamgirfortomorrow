@@ -18,8 +18,8 @@ export function Achievements() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Recent Initiatives Card */}
-          <div className="p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-2xl font-black mb-10 border-b border-black pb-4 text-primary">
+          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
               গত ১৫ মাসে সাম্প্রতিক উদ্যোগ
             </h3>
             <div className="space-y-8">
@@ -27,11 +27,11 @@ export function Achievements() {
                 .filter((a) => a.year === "২০২৪" || a.year === "২০২৫")
                 .map((item, idx) => (
                   <div key={idx} className="group">
-                    <h4 className="bengali text-xl font-bold mb-2 flex items-start gap-3">
+                    <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
                       {item.title}
                     </h4>
-                    <p className="bengali text-neutral-600 leading-relaxed pl-7">
+                    <p className="bengali text-neutral-600 leading-relaxed pl-7 text-sm sm:text-base">
                       {item.description}
                     </p>
                   </div>
@@ -40,8 +40,8 @@ export function Achievements() {
           </div>
 
           {/* BNP Era Projects Card */}
-          <div className="p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-2xl font-black mb-10 border-b border-black pb-4 text-primary">
+          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
               বিএনপি শাসনামলে বড় প্রকল্প (২০০১–২০০৬)
             </h3>
             <div className="space-y-8">
@@ -54,11 +54,11 @@ export function Achievements() {
                 )
                 .map((item, idx) => (
                   <div key={idx} className="group">
-                    <h4 className="bengali text-xl font-bold mb-2 flex items-start gap-3">
+                    <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                       <span className="text-primary">{idx + 1}.</span>
                       {item.title}
                     </h4>
-                    <p className="bengali text-neutral-600 leading-relaxed pl-7">
+                    <p className="bengali text-neutral-600 leading-relaxed pl-7 text-sm sm:text-base">
                       {item.description}
                     </p>
                   </div>
@@ -67,18 +67,18 @@ export function Achievements() {
           </div>
 
           {/* National Contributions Card */}
-          <div className="p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-2xl font-black mb-10 border-b border-black pb-4 text-primary">
+          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
               জাতীয় অবদান (২০০১–২০০৬)
             </h3>
             <div className="space-y-8">
               {SITE_DATA.contributions.national.map((item, idx) => (
                 <div key={idx} className="group">
-                  <h4 className="bengali text-xl font-bold mb-2 flex items-start gap-3">
+                  <h4 className="bengali text-lg sm:text-xl font-bold mb-2 flex items-start gap-3">
                     <span className="text-primary">→</span>
                     {item.title}
                   </h4>
-                  <p className="bengali text-neutral-600 leading-relaxed pl-7">
+                  <p className="bengali text-neutral-600 leading-relaxed pl-7 text-sm sm:text-base">
                     {item.description}
                   </p>
                 </div>
@@ -87,13 +87,16 @@ export function Achievements() {
           </div>
 
           {/* Local Work List Card */}
-          <div className="p-12 border border-black bg-neutral-50">
-            <h3 className="bengali text-2xl font-black mb-10 border-b border-black pb-4 text-primary">
+          <div className="p-6 sm:p-12 border border-black bg-neutral-50">
+            <h3 className="bengali text-xl sm:text-2xl font-black mb-10 border-b border-black pb-4 text-primary italic">
               ঠাকুরগাঁওয়ে বিএনপির কাজ (১৯৯১–২০০৬)
             </h3>
             <div className="space-y-6">
               {SITE_DATA.contributions.local.map((item, idx) => (
-                <div key={idx} className="flex font-bold items-start gap-4">
+                <div
+                  key={idx}
+                  className="flex font-bold items-start gap-4 text-sm sm:text-base"
+                >
                   <span className="text-primary text-xl">●</span>
                   <div className="bengali">
                     <span className="text-black">{item.title}:</span>{" "}
@@ -103,7 +106,7 @@ export function Achievements() {
                   </div>
                 </div>
               ))}
-              <p className="bengali text-neutral-600 pt-4 italic font-medium">
+              <p className="bengali text-neutral-600 pt-4 italic font-medium text-sm sm:text-base">
                 ঠাকুরগাঁওয়ের সব বেসরকারি স্কুল ও কলেজ এমপিওভুক্ত হওয়ায় অর্থনীতি
                 বদলে যায়। তিনি ব্যপক সামাজিক উন্নয়ন মূলক কাজে ফান্ডিং এর
                 ব্যবস্থা করেন।
