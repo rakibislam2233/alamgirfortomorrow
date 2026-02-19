@@ -3,6 +3,7 @@
 import alamgirImg from "@/assets/images/alamgir.jpg";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -67,16 +68,33 @@ export function Hero() {
                 alt={t.name}
                 fill
                 priority
-                className="object-cover transition-none"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
 
               {/* Image Overlay Label */}
-              <div className="absolute bottom-0 left-0 right-0 bg-primary p-6 text-white translate-y-full transition-none group-hover:translate-y-0 duration-300">
-                <p className="bengali text-sm font-bold tracking-widest uppercase opacity-80 mb-1">
+              <motion.div
+                initial={{ y: "100%" }}
+                whileHover={{ y: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                className="absolute bottom-0 left-0 right-0 bg-primary p-6 text-white z-20"
+              >
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 0.8, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bengali text-sm font-bold tracking-widest uppercase mb-1"
+                >
                   {t.party}
-                </p>
-                <p className="bengali text-2xl font-black">{t.name}</p>
-              </div>
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bengali text-2xl font-black"
+                >
+                  {t.name}
+                </motion.p>
+              </motion.div>
             </div>
 
             {/* Floating Stats or Info */}

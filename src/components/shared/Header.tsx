@@ -55,13 +55,13 @@ export function Header() {
             <div className="flex items-center gap-2 border border-primary px-2 py-1">
               <button
                 onClick={() => setLanguage("bn")}
-                className={`text-xs font-bold px-2 py-1 ${language === "bn" ? "bg-primary text-white" : "text-primary"}`}
+                className={`text-xs font-bold px-2 py-1 cursor-pointer ${language === "bn" ? "bg-primary text-white" : "text-primary"}`}
               >
                 BN
               </button>
               <button
                 onClick={() => setLanguage("en")}
-                className={`text-xs font-bold px-2 py-1 ${language === "en" ? "bg-primary text-white" : "text-primary"}`}
+                className={`text-xs font-bold px-2 py-1 cursor-pointer ${language === "en" ? "bg-primary text-white" : "text-primary"}`}
               >
                 EN
               </button>
