@@ -154,7 +154,7 @@ export function VolunteerPageClient() {
 
                 <Button
                   type="submit"
-                  className="bengali w-full h-16 sm:h-20 bg-primary text-xl sm:text-2xl font-black text-white transition-none hover:bg-primary/90"
+                  className="bengali w-full h-16 bg-primary text-xl cursor-pointer font-black text-white transition-none hover:bg-primary/90"
                 >
                   {language === "bn" ? "টিমে যোগ দিন →" : "Join the Team →"}
                 </Button>

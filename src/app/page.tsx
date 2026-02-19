@@ -12,9 +12,9 @@ import { Header } from "@/components/shared/Header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "হোম | alamgirfortomorrow",
+  title: "হোম | Alamgir For Tomorrow",
   description:
-    "মির্জা ফখরুল ইসলাম আলমগীর - বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ। জনতাই শক্তি।",
+    "মির্জা ফখরুল ইসলাম আলমগীর - বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ। জনতাই শক্তি।",
   alternates: {
     canonical: "/",
   },

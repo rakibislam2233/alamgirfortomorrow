@@ -3,7 +3,6 @@
 import alamgirImg from "@/assets/images/alamgir.jpg";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/context/LanguageContext";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -38,14 +37,14 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
-                className="bengali h-auto bg-primary px-8 py-5 text-lg font-bold text-white transition-none hover:bg-primary/90 sm:w-auto sm:px-10 sm:py-6 sm:text-xl border-2 border-primary"
+                className="bengali bg-primary px-8 py-2 cursor-pointer text-lg font-bold text-white transition-none hover:bg-primary/90 sm:w-auto sm:px-10 sm:py-6 sm:text-xl border-2 border-primary"
               >
                 <Link href="/contact">{t.hero.cta}</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="bengali h-auto border-2 border-primary px-8 py-5 text-lg font-bold text-primary hover:bg-primary/5 sm:w-auto sm:px-10 sm:py-6 sm:text-xl"
+                className="bengali border-2 border-primary px-8 py-2 cursor-pointer text-lg font-bold text-primary hover:bg-primary/5 sm:w-auto sm:px-10 sm:py-6 sm:text-xl"
               >
                 <Link href="/about">
                   {language === "bn" ? "আরও জানুন" : "Learn More"}
@@ -62,43 +61,26 @@ export function Hero() {
             <div className="absolute -inset-4 border-2 border-primary/20 -z-10 translate-x-4 translate-y-4" />
             <div className="absolute inset-0 bg-primary/5 -z-10 translate-x-8 translate-y-8" />
 
-            <div className="relative w-full h-full border-4 border-primary shadow-[20px_20px_0px_0px_rgba(0,106,78,1)] overflow-hidden group">
+            <div className="relative w-full h-full border-4 border-primary shadow-[20px_20px_0px_0px_rgba(0,106,78,1)] overflow-hidden group cursor-pointer">
               <Image
                 src={alamgirImg}
                 alt={t.name}
                 fill
                 priority
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-none"
               />
 
               {/* Image Overlay Label */}
-              <motion.div
-                initial={{ y: "100%" }}
-                whileHover={{ y: 0 }}
-                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                className="absolute bottom-0 left-0 right-0 bg-primary p-6 text-white z-20"
-              >
-                <motion.p
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 0.8, x: 0 }}
-                  transition={{ delay: 0.1 }}
-                  className="bengali text-sm font-bold tracking-widest uppercase mb-1"
-                >
+              <div className="absolute bottom-0 left-0 right-0 bg-primary p-6 text-white translate-y-full transition-all duration-300 group-hover:translate-y-0">
+                <p className="bengali text-sm font-bold tracking-widest uppercase opacity-80 mb-1">
                   {t.party}
-                </motion.p>
-                <motion.p
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="bengali text-2xl font-black"
-                >
-                  {t.name}
-                </motion.p>
-              </motion.div>
+                </p>
+                <p className="bengali text-2xl font-black">{t.name}</p>
+              </div>
             </div>
 
             {/* Floating Stats or Info */}
-            <div className="absolute -left-12 bottom-20 bg-white border-2 border-primary p-6 hidden md:block shadow-[8px_8px_0px_0px_rgba(0,106,78,1)]">
+            <div className="absolute -left-12 bottom-30 bg-white border-2 border-primary p-6 hidden md:block shadow-[8px_8px_0px_0px_rgba(0,106,78,1)]">
               <p className="bengali text-primary text-3xl font-black leading-none mb-1">
                 {language === "bn" ? "ঠাকুরগাঁও-১" : "Thakurgaon-1"}
               </p>

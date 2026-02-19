@@ -19,22 +19,22 @@ const SITE_URL = "https://alamgirfortomorrow.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
-    template: "%s | alamgirfortomorrow",
+    default: "Alamgir For Tomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
+    template: "%s | Alamgir For Tomorrow",
   },
   description:
-    "মির্জা ফখরুল ইসলাম আলমগীর, ঠাকুরগাঁও-১ আসনের সংসদ সদস্যের অফিসিয়াল ওয়েবসাইট। বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
+    "মির্জা ফখরুল ইসলাম আলমগীর, ঠাকুরগাঁও-১ আসনের সংসদ সদস্যের অফিসিয়াল ওয়েবসাইট। বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
   keywords: [
+    "Alamgir For Tomorrow",
     "Mirza Fakhrul Islam Alamgir",
     "মির্জা ফখরুল ইসলাম আলমগীর",
     "BNP",
-    "বাংলাদেশ জাতীয়তাবাদী দল",
+    "বাংলাদেশ জাতীয়তাবাদী দল",
     "Thakurgaon",
     "ঠাকুরগাঁও",
     "Bangladesh Politics",
     "Election 2024",
     "Democracy",
-    "Alamgir For Tomorrow",
   ],
   authors: [{ name: "Mirza Fakhrul Islam Alamgir" }],
   creator: "Mirza Fakhrul Islam Alamgir",
@@ -48,11 +48,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
+    title: "Alamgir For Tomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
     description:
-      "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ। জনতাই শক্তি।",
+      "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ। জনতাই শক্তি।",
     url: SITE_URL,
-    siteName: "alamgirfortomorrow",
+    siteName: "Alamgir For Tomorrow",
     locale: "bn_BD",
     type: "website",
     images: [
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
-    description: "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
+    title: "Alamgir For Tomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
+    description: "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
     creator: "@BNPSGOffice",
     images: ["/og-image.jpg"],
   },
