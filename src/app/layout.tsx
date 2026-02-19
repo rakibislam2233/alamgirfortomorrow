@@ -1,3 +1,4 @@
+import { LanguageProvider } from "@/context/LanguageContext";
 import type { Metadata } from "next";
 import { Hind_Siliguri, Inter } from "next/font/google";
 import "./globals.css";
@@ -35,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${hindSiliguri.variable} antialiased`}
       >
-        {children}
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

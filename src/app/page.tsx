@@ -5,9 +5,7 @@ import { Achievements } from "@/components/sections/Achievements";
 import { Commitments } from "@/components/sections/Commitments";
 import { Constituency } from "@/components/sections/Constituency";
 import { Contact } from "@/components/sections/Contact";
-import { Gallery } from "@/components/sections/Gallery";
 import { Hero } from "@/components/sections/Hero";
-import { News } from "@/components/sections/News";
 import { ProblemForm } from "@/components/sections/ProblemForm";
 import { QuoteSection } from "@/components/sections/QuoteSection";
 import { FloatingProblemButton } from "@/components/shared/FloatingProblemButton";
@@ -46,14 +44,9 @@ export default function Home() {
           <ProblemForm />
         </motion.div>
         <motion.div {...fadeIn}>
-          <News />
-        </motion.div>
-        <motion.div {...fadeIn}>
-          <Gallery />
-        </motion.div>
-        <motion.div {...fadeIn}>
           <Contact />
         </motion.div>
+
         <Footer />
         <FloatingProblemButton />
       </section>

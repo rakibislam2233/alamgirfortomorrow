@@ -7,51 +7,51 @@ export default function CommitmentsPage() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="bg-black py-32 text-white">
+      <section className="bg-black py-16 sm:py-24 md:py-32 text-white">
         <div className="container mx-auto px-4 sm:px-6">
-          <span className="bengali mb-4 block text-sm font-bold uppercase tracking-[0.3em] text-primary italic">
+          <span className="bengali mb-4 block text-xs sm:text-sm font-bold uppercase tracking-[0.3em] text-primary italic">
             — আমাদের ইশতেহার
           </span>
-          <h1 className="bengali text-6xl font-black leading-tight tracking-tighter md:text-8xl">
+          <h1 className="bengali text-4xl font-black leading-tight tracking-tighter sm:text-6xl md:text-8xl">
             আমার ৭টি অঙ্গীকার
           </h1>
-          <p className="bengali mt-8 text-2xl font-medium text-neutral-400 max-w-2xl">
+          <p className="bengali mt-6 sm:mt-8 text-lg sm:text-2xl font-medium text-neutral-400 max-w-2xl">
             সুস্থ, শক্তিশালী ও আধুনিক ঠাকুরগাঁও গড়ার লক্ষ্যে আমাদের সুনির্দিষ্ট
             পরিকল্পনা।
           </p>
         </div>
       </section>
 
-      <section className="py-12 md:py-24">
+      <section className="py-12 sm:py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-2">
             {SITE_DATA.commitments.map((commitment, idx) => (
               <div
                 key={idx}
-                className="group border border-black p-12 transition-none hover:bg-neutral-50"
+                className="group border border-black p-8 sm:p-12 transition-none hover:bg-neutral-50"
               >
-                <div className="mb-12 flex h-20 w-20 items-center justify-center border-2 border-primary text-4xl font-black text-primary">
+                <div className="mb-8 sm:mb-12 flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center border-2 border-primary text-3xl sm:text-4xl font-black text-primary">
                   {idx + 1}
                 </div>
-                <h2 className="bengali mb-8 text-4xl font-black tracking-tight">
+                <h2 className="bengali mb-6 sm:mb-8 text-2xl sm:text-4xl font-black tracking-tight">
                   {commitment.title}
                 </h2>
-                <p className="bengali text-2xl leading-relaxed text-neutral-600 font-light">
+                <p className="bengali text-lg sm:text-2xl leading-relaxed text-neutral-600 font-light">
                   {commitment.description}
                 </p>
-                <div className="mt-12 h-1 w-20 bg-primary"></div>
+                <div className="mt-8 sm:mt-12 h-1 w-20 bg-primary"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-primary py-24 text-white text-center">
+      <section className="bg-primary py-16 sm:py-24 text-white text-center">
         <div className="container mx-auto px-4 sm:px-6">
-          <h2 className="bengali text-5xl font-black mb-8 italic">
+          <h2 className="bengali text-3xl sm:text-5xl font-black mb-6 sm:mb-8 italic">
             জনতাই শক্তি, ঠাকুরগাঁও হবে অপরাজেয়
           </h2>
-          <p className="bengali text-xl opacity-80">
+          <p className="bengali text-lg sm:text-xl opacity-80">
             আমাদের সাথে যুক্ত হয়ে নতুন দিনের পথ প্রশস্ত করুন।
           </p>
         </div>

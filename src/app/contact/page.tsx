@@ -9,12 +9,12 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       <Header />
 
-      <section className="bg-primary py-32 text-white">
+      <section className="bg-primary py-16 sm:py-24 md:py-32 text-white">
         <div className="container mx-auto px-4 sm:px-6">
-          <span className="bengali mb-4 block text-sm font-bold uppercase tracking-[0.3em] opacity-70 italic">
+          <span className="bengali mb-4 block text-xs sm:text-sm font-bold uppercase tracking-[0.3em] opacity-70 italic">
             — সরাসরি যোগাযোগ
           </span>
-          <h1 className="bengali text-6xl font-black leading-tight tracking-tighter md:text-8xl">
+          <h1 className="bengali text-4xl font-black leading-tight tracking-tighter sm:text-6xl md:text-8xl">
             আপনার প্রয়োজনে <br />
             আমরা আছি
           </h1>
