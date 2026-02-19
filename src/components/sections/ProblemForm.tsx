@@ -74,7 +74,7 @@ export function ProblemForm() {
 
   if (isSubmitted) {
     return (
-      <div className="w-full container mx-auto bg-primary p-8 sm:p-12 text-white">
+      <div className="w-full bg-primary p-8 sm:p-12 text-white">
         <h3 className="bengali text-2xl sm:text-3xl font-bold mb-4">
           {language === "bn" ? "ধন্যবাদ!" : "Thank You!"}
         </h3>
@@ -86,7 +86,7 @@ export function ProblemForm() {
         <Button
           variant="outline"
           onClick={() => setIsSubmitted(false)}
-          className="mt-8 border-white text-white hover:bg-white hover:text-primary"
+          className="mt-8 border-white text-primary"
         >
           {language === "bn" ? "আরেকটি সমস্যা জানান" : "Report another problem"}
         </Button>

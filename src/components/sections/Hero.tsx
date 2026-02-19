@@ -56,7 +56,7 @@ export function Hero() {
 
         {/* Image Side */}
         <div className="relative flex-1 min-h-[500px] lg:min-h-full flex items-center justify-center lg:justify-end px-4">
-          <div className="relative w-full max-w-[500px] aspect-[4/5] lg:aspect-[3/4]">
+          <div className="relative w-full max-w-[500px] aspect-4/5 lg:aspect-3/4">
             {/* Decorative Frames */}
             <div className="absolute -inset-4 border-2 border-primary/20 -z-10 translate-x-4 translate-y-4" />
             <div className="absolute inset-0 bg-primary/5 -z-10 translate-x-8 translate-y-8" />
@@ -71,7 +71,7 @@ export function Hero() {
               />
 
               {/* Image Overlay Label */}
-              <div className="absolute bottom-0 left-0 right-0 bg-primary p-6 text-white translate-y-full transition-none group-hover:translate-y-0">
+              <div className="absolute bottom-0 left-0 right-0 bg-primary p-6 text-white translate-y-full transition-none group-hover:translate-y-0 duration-300">
                 <p className="bengali text-sm font-bold tracking-widest uppercase opacity-80 mb-1">
                   {t.party}
                 </p>

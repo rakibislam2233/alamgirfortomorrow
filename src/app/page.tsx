@@ -1,5 +1,3 @@
-"use client";
-
 import { About } from "@/components/sections/About";
 import { Achievements } from "@/components/sections/Achievements";
 import { Commitments } from "@/components/sections/Commitments";
@@ -11,6 +9,16 @@ import { QuoteSection } from "@/components/sections/QuoteSection";
 import { FloatingProblemButton } from "@/components/shared/FloatingProblemButton";
 import { Footer } from "@/components/shared/Footer";
 import { Header } from "@/components/shared/Header";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "হোম | alamgirfortomorrow",
+  description:
+    "মির্জা ফখরুল ইসলাম আলমগীর - বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ। জনতাই শক্তি।",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

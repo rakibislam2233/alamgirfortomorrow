@@ -14,15 +14,73 @@ const hindSiliguri = Hind_Siliguri({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const SITE_URL = "https://alamgirfortomorrow.com";
+
 export const metadata: Metadata = {
-  title: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
+    template: "%s | alamgirfortomorrow",
+  },
   description:
     "মির্জা ফখরুল ইসলাম আলমগীর, ঠাকুরগাঁও-১ আসনের সংসদ সদস্যের অফিসিয়াল ওয়েবসাইট। বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
+  keywords: [
+    "Mirza Fakhrul Islam Alamgir",
+    "মির্জা ফখরুল ইসলাম আলমগীর",
+    "BNP",
+    "বাংলাদেশ জাতীয়তাবাদী দল",
+    "Thakurgaon",
+    "ঠাকুরগাঁও",
+    "Bangladesh Politics",
+    "Election 2024",
+    "Democracy",
+    "Alamgir For Tomorrow",
+  ],
+  authors: [{ name: "Mirza Fakhrul Islam Alamgir" }],
+  creator: "Mirza Fakhrul Islam Alamgir",
+  publisher: "Mirza Fakhrul Islam Alamgir",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
-    description: "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
+    description:
+      "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ। জনতাই শক্তি।",
+    url: SITE_URL,
+    siteName: "alamgirfortomorrow",
     locale: "bn_BD",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mirza Fakhrul Islam Alamgir - Alamgir For Tomorrow",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "alamgirfortomorrow | মির্জা ফখরুল ইসলাম আলমগীর",
+    description: "বাংলাদেশের মুক্তির পথে যাত্রা: ঠাকুরগাঁওয়ে নতুন যুগ।",
+    creator: "@BNPSGOffice",
+    images: ["/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
